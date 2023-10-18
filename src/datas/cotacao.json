@@ -1,0 +1,137 @@
+{
+  "cotacoes": [
+    {
+      "numero": "COT2023-001",
+      "data_emissao": "2023-10-09",
+      "cliente": {
+        "nome": "Empresa Exemplo 1",
+        "contato": "Maria da Silva",
+        "email": "maria@empresaexemplo1.com",
+        "telefone": "(11) 1234-5678",
+        "endereco": "Rua da Amostra, 456, Bairro Exemplo, Cidade"
+      },
+      "produtos": [
+        {
+          "descricao": "Produto A",
+          "quantidade": 100,
+          "preco_unitario": 50.0,
+          "total": 5000.0
+        },
+        {
+          "descricao": "Produto B",
+          "quantidade": 50,
+          "preco_unitario": 75.0,
+          "total": 3750.0
+        }
+      ],
+      "total_cotacao": 8750.0,
+      "condicoes_pagamento": "30% à vista, 70% em 30 dias",
+      "prazo_entrega": "45 dias úteis",
+      "observacoes": "Os produtos serão entregues na data acordada no endereço fornecido."
+    },
+    {
+      "numero": "COT2023-002",
+      "data_emissao": "2023-10-10",
+      "cliente": {
+        "nome": "Empresa Exemplo 2",
+        "contato": "José Oliveira",
+        "email": "jose@empresaexemplo2.com",
+        "telefone": "(11) 5555-5555",
+        "endereco": "Av. do Exemplo, 789, Bairro Teste, Cidade"
+      },
+      "produtos": [
+        {
+          "descricao": "Produto C",
+          "quantidade": 75,
+          "preco_unitario": 30.0,
+          "total": 2250.0
+        },
+        {
+          "descricao": "Produto D",
+          "quantidade": 30,
+          "preco_unitario": 120.0,
+          "total": 3600.0
+        }
+      ],
+      "total_cotacao": 5850.0,
+      "condicoes_pagamento": "50% à vista, 50% em 45 dias",
+      "prazo_entrega": "60 dias úteis",
+      "observacoes": "Entrega em horário comercial."
+    },
+    {
+      "numero": "COT2023-003",
+      "data_emissao": "2023-10-11",
+      "cliente": {
+        "nome": "Empresa Exemplo 3",
+        "contato": "Carlos Pereira",
+        "email": "carlos@empresaexemplo3.com",
+        "telefone": "(11) 8765-4321",
+        "endereco": "Rua dos Testes, 123, Bairro Modelo, Cidade"
+      },
+      "produtos": [
+        {
+          "descricao": "Produto E",
+          "quantidade": 200,
+          "preco_unitario": 20.0,
+          "total": 4000.0
+        }
+      ],
+      "total_cotacao": 4000.0,
+      "condicoes_pagamento": "40% à vista, 60% em 60 dias",
+      "prazo_entrega": "30 dias úteis",
+      "observacoes": "Entrega preferencialmente pela manhã."
+    },
+    {
+      "numero": "COT2023-004",
+      "data_emissao": "2023-10-12",
+      "cliente": {
+        "nome": "Empresa Exemplo 4",
+        "contato": "Ana Santos",
+        "email": "ana@empresaexemplo4.com",
+        "telefone": "(11) 2345-6789",
+        "endereco": "Av. do Modelo, 987, Bairro Exemplar, Cidade"
+      },
+      "produtos": [
+        {
+          "descricao": "Produto F",
+          "quantidade": 150,
+          "preco_unitario": 60.0,
+          "total": 9000.0
+        }
+      ],
+      "total_cotacao": 9000.0,
+      "condicoes_pagamento": "100% à vista",
+      "prazo_entrega": "15 dias úteis",
+      "observacoes": "Produtos embalados individualmente."
+    },
+    {
+      "numero": "COT2023-005",
+      "data_emissao": "2023-10-13",
+      "cliente": {
+        "nome": "Empresa Exemplo 5",
+        "contato": "Paulo Oliveira",
+        "email": "paulo@empresaexemplo5.com",
+        "telefone": "(11) 9999-9999",
+        "endereco": "Rua dos Exemplos, 789, Bairro Teste, Cidade"
+      },
+      "produtos": [
+        {
+          "descricao": "Produto G",
+          "quantidade": 80,
+          "preco_unitario": 40.0,
+          "total": 3200.0
+        },
+        {
+          "descricao": "Produto H",
+          "quantidade": 40,
+          "preco_unitario": 90.0,
+          "total": 3600.0
+        }
+      ],
+      "total_cotacao": 6800.0,
+      "condicoes_pagamento": "60% à vista, 40% em 30 dias",
+      "prazo_entrega": "20 dias úteis",
+      "observacoes": "Entrega com agendamento prévio."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "options": [
+    {
+      "name": "PRINCIPAL",
+      "href": "/"
+    },
+    {
+      "name": "CADASTRAR COTAÇÃO",
+      "href": "/cadastro"
+    },
+    {
+      "name": "COTAS",
+      "href": "/cota"
+    },
+    {
+      "name": "FORNECEDORES",
+      "href": "/fornecedores"
+    },
+    {
+      "name": "LOGIN",
+      "href": "/login"
+    },
+    {
+      "name": "...",
+      "href": "/"
+    }
+  ]
+}

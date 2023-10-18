@@ -1,0 +1,285 @@
+{
+  "fornecedores": [
+    {
+      "id": "0",
+      "nome": "João da Silva",
+      "imgPerfil": "",
+      "contato": "João da Silva",
+      "cnpj": "12345678901234",
+      "email": "joao@fornecedorexemplo1.com",
+      "telefone": "(11) 1111-1111",
+      "endereco": "Rua do Fornecedor 1, Bairro Exemplo, Cidade",
+      "produtos_fornecidos": [
+        {
+          "produto": "Produto A",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 50.0,
+          "estoque_disponivel": 200,
+          "ncm": "0123456789"
+        },
+        {
+          "produto": "Produto A Plus",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 50.0,
+          "estoque_disponivel": 200,
+          "ncm": "0123456789"
+        },
+        {
+          "produto": "Produto A Golden",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 5000.0,
+          "estoque_disponivel": 200,
+          "ncm": "0123456789"
+        },
+        {
+          "produto": "Produto Splash",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 500.0,
+          "estoque_disponivel": 200,
+          "ncm": "0123456789"
+        },
+        {
+          "produto": "Produto A Zona",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 50.0,
+          "estoque_disponivel": 200,
+          "ncm": "0123456789"
+        },
+        {
+          "produto": "Produto Amante",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 5.0,
+          "estoque_disponivel": 200
+        },
+        {
+          "produto": "Produto Amaciante de Roupa",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 100.0,
+          "estoque_disponivel": 200
+        },
+        {
+          "produto": "Produto A",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 50.0,
+          "estoque_disponivel": 200
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "nome": "Maria Oliveira",
+      "imgPerfil": "",
+      "contato": "Maria Oliveira",
+      "cnpj": "23456789012345",
+      "email": "maria@fornecedorexemplo2.com",
+      "telefone": "(22) 2222-2222",
+      "endereco": "Avenida do Fornecedor 2, Bairro Exemplo, Cidade",
+      "produtos_fornecidos": [
+        {
+          "produto": "Produto A",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 50.0,
+          "estoque_disponivel": 200
+        },
+        {
+          "produto": "Produto A",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 50.0,
+          "estoque_disponivel": 200
+        },
+        {
+          "produto": "Produto A",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 50.0,
+          "estoque_disponivel": 200
+        },
+        {
+          "produto": "Produto A",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 50.0,
+          "estoque_disponivel": 200
+        },
+        {
+          "produto": "Produto A",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 50.0,
+          "estoque_disponivel": 200
+        },
+        {
+          "produto": "Produto A",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 50.0,
+          "estoque_disponivel": 200
+        },
+        {
+          "produto": "Produto A",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 50.0,
+          "estoque_disponivel": 200
+        },
+        {
+          "produto": "Produto A",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 50.0,
+          "estoque_disponivel": 200
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "nome": "Pedro Santos",
+      "imgPerfil": "",
+      "contato": "Pedro Santos",
+      "cnpj": "34567890123456",
+      "email": "pedro@fornecedorexemplo3.com",
+      "telefone": "(33) 3333-3333",
+      "endereco": "Travessa do Fornecedor 3, Bairro Exemplo, Cidade",
+      "produtos_fornecidos": [
+        {
+          "produto": "Produto C",
+          "descricao": "Descrição do Produto C",
+          "preco_unitario": 70.0,
+          "estoque_disponivel": 180
+        },
+        {
+          "produto": "Produto A",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 50.0,
+          "estoque_disponivel": 200
+        },
+        {
+          "produto": "Produto A",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 50.0,
+          "estoque_disponivel": 200
+        },
+        {
+          "produto": "Produto A",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 50.0,
+          "estoque_disponivel": 200
+        },
+        {
+          "produto": "Produto A",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 50.0,
+          "estoque_disponivel": 200
+        },
+        {
+          "produto": "Produto A",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 50.0,
+          "estoque_disponivel": 200
+        },
+        {
+          "produto": "Produto A",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 50.0,
+          "estoque_disponivel": 200
+        },
+        {
+          "produto": "Produto A",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 50.0,
+          "estoque_disponivel": 200
+        },
+        {
+          "produto": "Produto A",
+          "descricao": "Descrição do Produto A",
+          "preco_unitario": 50.0,
+          "estoque_disponivel": 200
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "nome": "Ana Pereira",
+      "imgPerfil": "",
+      "contato": "Ana Pereira",
+      "cnpj": "45678901234567",
+      "email": "ana@fornecedorexemplo4.com",
+      "telefone": "(44) 4444-4444",
+      "endereco": "Rua do Fornecedor 4, Bairro Exemplo, Cidade",
+      "produtos_fornecidos": [
+        {
+          "produto": "Produto D",
+          "descricao": "Descrição do Produto D",
+          "preco_unitario": 80.0,
+          "estoque_disponivel": 120
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "nome": "José Almeida",
+      "imgPerfil": "",
+      "contato": "José Almeida",
+      "cnpj": "56789012345678",
+      "email": "jose@fornecedorexemplo5.com",
+      "telefone": "(55) 5555-5555",
+      "endereco": "Avenida do Fornecedor 5, Bairro Exemplo, Cidade",
+      "produtos_fornecidos": [
+        {
+          "produto": "Produto E",
+          "descricao": "Descrição do Produto E",
+          "preco_unitario": 90.0,
+          "estoque_disponivel": 100
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "nome": "Carla Rodrigues",
+      "imgPerfil": "",
+      "contato": "Carla Rodrigues",
+      "cnpj": "67890123456789",
+      "email": "carla@fornecedorexemplo6.com",
+      "telefone": "(66) 6666-6666",
+      "endereco": "Travessa do Fornecedor 6, Bairro Exemplo, Cidade",
+      "produtos_fornecidos": [
+        {
+          "produto": "Produto F",
+          "descricao": "Descrição do Produto F",
+          "preco_unitario": 100.0,
+          "estoque_disponivel": 90
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "nome": "Ricardo Lima",
+      "imgPerfil": "",
+      "contato": "Ricardo Lima",
+      "cnpj": "78901234567890",
+      "email": "ricardo@fornecedorexemplo7.com",
+      "telefone": "(77) 7777-7777",
+      "endereco": "Rua do Fornecedor 7, Bairro Exemplo, Cidade",
+      "produtos_fornecidos": [
+        {
+          "produto": "Produto G",
+          "descricao": "Descrição do Produto G",
+          "preco_unitario": 110.0,
+          "estoque_disponivel": 80
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "nome": "Sandra Souza",
+      "imgPerfil": "",
+      "contato": "Sandra Souza",
+      "cnpj": "89012345678901",
+      "email": "sandra@fornecedorexemplo8.com",
+      "telefone": "(88) 8888-8888",
+      "endereco": "Avenida do Fornecedor 8, Bairro Exemplo, Cidade",
+      "produtos_fornecidos": [
+        {
+          "produto": "Produto H",
+          "descricao": "Descrição do Produto H",
+          "preco_unitario": 120.0,
+          "estoque_disponivel": 70
+        }
+      ]
+    }
+  ]
+}

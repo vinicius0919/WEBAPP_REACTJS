@@ -3,7 +3,7 @@ export const db = [];
 
 const Form = () => {
   function create() {
-    let nome = document.getElementById("nomeFornecedor").value;
+    let nome = document.getElementById("nomeEmpresa").value;
     let dataEmissao = document.getElementById("dataEmissao").value;
     let chaveAcesso = document.getElementById("chaveAcesso").value;
     let numeroNota = document.getElementById("numeroNota").value;
@@ -23,14 +23,15 @@ const Form = () => {
   return (
     <form>
       <div className="mb-3">
-        <label htmlFor="nomeFornecedor" className="form-label">
-          Nome Fornecedor
+        <label htmlFor="nomeEmpresa" className="form-label">
+          Empresa
         </label>
         <input
           type="text"
           className="form-control"
-          id="nomeFornecedor"
-          aria-describedby="nomeFornecedorHelp"
+          id="nomeEmpresa"
+          aria-describedby="nomeEmpresaHelp"
+          placeholder="Digite o nome da sua empresa"
         />
       </div>
       <div className="mb-3">

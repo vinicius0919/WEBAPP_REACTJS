@@ -1,41 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import AuthContext from "../contexts/auth";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import OtherRoutes from "./otherRoutes";
 
-import Login from "../pages/login";
-import Cadastro from "../pages/cadastro";
-import Cota from "../pages/cotas";
-import Fornecedores from "../pages/fornecedoresPage";
-import TemplatePage from "../pages/templatePage";
-import FornecedorComplete from "../pages/fornecedorComplete";
-import FornecedoresCards from "../components/FornecedoresCards";
-import RegisterPage from "../pages/registerPage";
-import Teste from "../pages/teste";
-
-import f from "../datas/fornecedor.json";
+import SignRoutes from "./signRoutes";
 
 const Rotas = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<TemplatePage />}>
-          <Route index element={<Teste />} />
-          <Route
-            path="fornecedores"
-            element={<FornecedoresCards fornecedores={f} />}
-          />
-          <Route
-            path="fornecedor"
-            element={<FornecedorComplete fornecedores={f} />}
-          />
-        </Route>
-
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/cadastro" element={<Cadastro />} />
-        <Route path="/cota" element={<Cota />} />
-      </Routes>
-    </BrowserRouter>
-  );
+  const context = useContext(AuthContext);
+  //console.log(context.log);
+  return context.log ? <SignRoutes /> : <OtherRoutes />;
 };
 
 export default Rotas;

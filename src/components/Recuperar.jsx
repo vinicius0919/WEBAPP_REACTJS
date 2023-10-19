@@ -1,21 +1,18 @@
 import React, { useState } from "react";
 import "../styles/Login.css";
 import { Link, useNavigate } from "react-router-dom";
+import autenticar from "../utils/auth.mjs";
 
-const Email = "admin@admin";
-const Senha = "admin";
-
-const Register = () => {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-    confirmPassword: ""
-  });
+const LoginPage = () => {
+  const [formData, setFormData] = useState({ email: "", password: "" });
   const [error, setError] = useState(null);
-  const [registered, setRegistered] = useState(false);
+  const [logged, setLogged] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = () => {};
+  const handleSubmit = async () => {
+    setError("Certifique-se de digitar um e-mail válido");
+  };
+
   const containerStyle = {
     display: "flex",
     justifyContent: "center",
@@ -40,25 +37,27 @@ const Register = () => {
     borderRadius: "5px"
   };
 
-  const buttonStyle = {
-    width: "100%",
-    padding: "10px",
-    borderRadius: "5px",
-    background: "#007bff",
-    color: "#fff",
-    border: "none",
-    cursor: "pointer"
-  };
-
   return (
     <div style={containerStyle}>
       <form style={formStyle}>
-        <h2 className="text-center mb-4">Registre-se</h2>
+        <h2 className="text-center mb-4">Recupere sua conta</h2>
         <div className="mb-3">
+          <h3
+            style={{
+              fontSize: "16px",
+              color: "green",
+              textShadow: "0px 0px 1px black",
+              textAlign: "center",
+              padding: "10px"
+            }}
+          >
+            Digite seu email, você receberá um código válido por 30 minutos para
+            efetuar a recuperação da sua conta
+          </h3>
           <input
             id="email"
             type="email"
-            placeholder="Digite seu e-mail"
+            placeholder="Exemplo: fulano@email.com"
             style={inputStyle}
             value={formData.email}
             onChange={(e) =>
@@ -67,60 +66,31 @@ const Register = () => {
             required
           />
         </div>
-        <div className="mb-3">
-          <input
-            id="password"
-            type="password"
-            placeholder="Digite sua senha"
-            style={inputStyle}
-            value={formData.password}
-            onChange={(e) =>
-              setFormData({ ...formData, password: e.target.value })
-            }
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <input
-            id="password"
-            type="password"
-            placeholder="Repita sua senha"
-            style={inputStyle}
-            value={formData.confirmPassword}
-            onChange={(e) =>
-              setFormData({ ...formData, confirmPassword: e.target.value })
-            }
-            required
-          />
-        </div>
-
-        <div className="row justify-content-evenly">
+        <div className="row justify-content-center">
           <div className="col-4">
             <button
-              onClick={function () {
-                console.log("chamando função de registrar");
-              }}
+              onClick={handleSubmit}
               type="button" // Use type "button" to prevent form submission
               className="btn btn-primary"
             >
-              Registrar
+              Enviar
             </button>
           </div>
-          <div className="col-4">
+          <div className="col-4 align-self-start">
             <Link to={"/login"}>
               <button
                 className="btn btn-success"
-                onClick={handleSubmit}
                 type="button" // Use type "button" to prevent form submission
               >
                 Voltar
               </button>
             </Link>
           </div>
+          {error && <div style={{ color: "red" }}>{error}</div>}
         </div>
       </form>
     </div>
   );
 };
 
-export default Register;
+export default LoginPage;

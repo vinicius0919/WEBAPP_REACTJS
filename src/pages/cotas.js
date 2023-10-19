@@ -6,7 +6,6 @@ import Navbar from "../components/Navbar";
 function Cotas() {
   return (
     <div>
-      <Navbar />
       <div className="container text-center">
         <div className="row justify-content-evenly">
           {cotacoesData.cotacoes.map((cotacao, index) => (

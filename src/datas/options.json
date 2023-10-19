@@ -17,8 +17,8 @@
       "href": "/fornecedores"
     },
     {
-      "name": "LOGIN",
-      "href": "/login"
+      "name": "LOGOUT",
+      "href": "/logout"
     },
     {
       "name": "...",

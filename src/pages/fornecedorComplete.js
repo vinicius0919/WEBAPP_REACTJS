@@ -20,8 +20,8 @@ const ProdutoItem = ({ item, index }) => (
       {item.ncm}
     </div>
     <div className="col-2" style={borderStyle}>
-      <button className="btn btn-success btn-responsivo">Editar</button>
-      <button className="btn btn-danger btn-responsivo">Deletar</button>
+      <button className="btn btn-success btn-sm">Editar</button>
+      <button className="btn btn-danger btn-sm">Deletar</button>
     </div>
   </div>
 );
@@ -83,7 +83,7 @@ const FornecedorComplete = ({ fornecedores }) => {
             <div className="col-3">NCM</div>
             <div className="col-4">Ações</div>
           </div>
-          {elementosProdutos}
+          <div className="container">{elementosProdutos}</div>
         </div>
       </div>
     </div>

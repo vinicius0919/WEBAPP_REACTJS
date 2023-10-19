@@ -3,7 +3,7 @@ import Form from "../components/Form";
 const Cadastro = () => {
   return (
     <div>
-      <Navbar />
+      <Form />
     </div>
   );
 };

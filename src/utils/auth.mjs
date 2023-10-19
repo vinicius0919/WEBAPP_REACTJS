@@ -1,16 +1,15 @@
 import axios from "axios"
 
 const autenticar = async (email, password) => {
-  console.log(email, password)
-  const m = 'http://192.168.0.109:3000/auth/login'
-  const q = "http://localhost:3004/login"
+  //console.log(email, password)
+  const url = 'http://localhost:3004/login'
   try {
     const response = await axios({
       method: 'post',
       headers: {
         'Access-Control-Allow-Origin': "*"
       },
-      url: m,
+      url: url,
       data: {
         email: email,
         password: password
@@ -18,13 +17,34 @@ const autenticar = async (email, password) => {
     }
     );
 
-    // Se a autenticação for bem-sucedida, a resposta da API estará disponível em `response.data`.
-    console.log(response.data)
     return response.data;
+
   } catch (error) {
-    // Em caso de erro, o Axios capturará a exceção e você pode tratá-la aqui.
-    return error;
+    console.log(error)
   }
 };
+
+
+export async function getUser(token){
+  const url = 'http://localhost:3004/'
+  try {
+    const response = await axios({
+      method: 'get',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Access-Control-Allow-Origin': "*"
+      },
+      url: url,
+      data: {
+      }
+    }
+    );
+
+    return response.data;
+
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 export default autenticar;

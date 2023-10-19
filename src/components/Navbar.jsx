@@ -15,21 +15,19 @@ const tittleStl = {
   textAlign: "center"
 };
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <div>
-      <div>
       <button
         className="btn"
         type="button"
-        style={{ position: "absolute"}}
+        style={{ position: "absolute" }}
         data-bs-toggle="offcanvas"
         data-bs-target="#staticBackdrop"
         aria-controls="staticBackdrop"
       >
         <img src={menubtn} alt="menu-btn" width="15px" height="15px" />
       </button>
-      </div>
 
       <h1 style={tittleStl}>SISTEMA</h1>
 
@@ -42,7 +40,7 @@ const Navbar = () => {
       >
         <div className="offcanvas-header">
           <h5 className="offcanvas-title" id="staticBackdropLabel">
-            TRADENOW
+            Olá, {props.name}
           </h5>
           <button
             type="button"
@@ -51,13 +49,12 @@ const Navbar = () => {
             aria-label="Close"
           ></button>
         </div>
+
         <div className="offcanvas-body">
           <div className="conteiner">
-            <div className="row">
-              {optionsData.options.map((option, index) => (
-                <Sidebar options={option} key={index} />
-              ))}
-            </div>
+            {optionsData.options.map((option, index) => (
+              <Sidebar options={option} key={index} index={index} />
+            ))}
           </div>
         </div>
       </div>

@@ -1,12 +1,14 @@
 import React from "react";
 import Rotas from "./routes/routes";
-import "./styles/styles.css";
+
+import { AuthProvider } from "./contexts/auth";
 
 function App() {
+  //console.log(Rotas);
   return (
-    <div id="App">
+    <AuthProvider value={{ signed: true }}>
       <Rotas />
-    </div>
+    </AuthProvider>
   );
 }
 

@@ -77,7 +77,7 @@ const LoginPage = () => {
             </button>
           </div>
           <div className="col-4 align-self-start">
-            <Link to={"/login"}>
+            <Link to={"/"}>
               <button
                 className="btn btn-success"
                 type="button" // Use type "button" to prevent form submission

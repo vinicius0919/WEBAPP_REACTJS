@@ -18,7 +18,7 @@ const LoginPage = () => {
   const handleSubmit = async () => {
     try {
       await context.logar(formData.email, formData.password);
-      console.log(context.log)
+      //console.log(context.log)
       if (!context.log) {
         navigate("/");
       } else {
@@ -97,7 +97,7 @@ const LoginPage = () => {
             className="row justify-content-center"
           >
             <div className="col">
-              <Link to="recuperar">
+              <Link to="register">
                 <button
                   type="button" // Use type "button" to prevent form submission
                   className="btn btn-success"

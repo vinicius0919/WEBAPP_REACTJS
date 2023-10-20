@@ -1,8 +1,7 @@
 import axios from "axios"
 
 const autenticar = async (email, password) => {
-  //console.log(email, password)
-  const url = 'http://localhost:3004/login'
+  const url = 'http://10.0.0.208:3000/auth/login'
   try {
     const response = await axios({
       method: 'post',
@@ -14,9 +13,7 @@ const autenticar = async (email, password) => {
         email: email,
         password: password
       }
-    }
-    );
-
+    });
     return response.data;
 
   } catch (error) {
@@ -24,9 +21,34 @@ const autenticar = async (email, password) => {
   }
 };
 
+export async function addUser(nome, sobrenome, email, password, cpf){
+  const url = 'http://10.0.0.208:3000/proprietario'
+  try {
+    const response = await axios({
+      method: 'post',
+      headers: {
+        'Access-Control-Allow-Origin': "*"
+      },
+      url: url,
+      data: {
+        nome: nome,
+        sobrenome: sobrenome,
+        email: email,
+        password: password,
+        cpf: cpf
+      }
+    });
+
+    return true;
+
+  } catch (error) {
+    return false
+  }
+}
 
 export async function getUser(token){
-  const url = 'http://localhost:3004/'
+  console.log("ENVIANDO O TOKEN:",token)
+  const url = 'http://10.0.0.208:3000/proprietario/perfil'
   try {
     const response = await axios({
       method: 'get',
@@ -34,12 +56,8 @@ export async function getUser(token){
         'Authorization': `Bearer ${token}`,
         'Access-Control-Allow-Origin': "*"
       },
-      url: url,
-      data: {
-      }
-    }
-    );
-
+      url: url
+    });
     return response.data;
 
   } catch (error) {

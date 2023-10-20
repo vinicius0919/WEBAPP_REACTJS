@@ -5,11 +5,9 @@ import AuthContext from "../contexts/auth";
 
 export default function TemplatePage() {
   const context = useContext(AuthContext);
-  const name = context.user.name
+  const name = context.user.nome
   
-  useEffect(() => {
-    context.fetchUserData()
-  }, []);
+
 
   return (
     <div>

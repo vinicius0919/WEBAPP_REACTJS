@@ -6,7 +6,7 @@ import Cota from "../pages/cotas";
 import TemplatePage from "../pages/templatePage";
 import FornecedorComplete from "../pages/fornecedorComplete";
 import FornecedoresCards from "../components/FornecedoresCards";
-
+import UpdateUser from "../pages/update";
 import Teste from "../pages/teste";
 
 import f from "../datas/fornecedor.json";
@@ -66,6 +66,7 @@ const OtherRoutes = () => {
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/cota" element={<Cota />} />
           <Route path="/logout" element={<Logout />} />
+          <Route path="/update" element={<UpdateUser />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

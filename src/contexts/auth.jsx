@@ -1,20 +1,23 @@
 import React, { createContext, useState, useEffect } from "react";
 
-import autenticar, {addUser, getUser} from "../utils/auth.mjs"
+import autenticar, {addUser, getUser, Api} from "../utils/auth.mjs"
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [log, setLog] = useState(true);
   const [user, setUser] = useState();
-
+  const api = Api()
   useEffect(() => {
-  
+    
     fetchUserData(); // Chama a função assíncrona imediatamente
   }, [log]);
   
   const fetchUserData = async () => {
     try {
+      const newData = await api.getUserProfile("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxM2ZkYzY0LWVhMDktNDRhZi1hZTEyLWJmMDc2ODc0MzdmMSIsImlhdCI6MTY5NzgyNzc5M30.Tq1YBZpnOjaUnRvxxkAvO22A4S0YeU4O51VmOYT6eBs")
+      console.log("This is a new way", newData)
+      
       const loggedInUser = localStorage.getItem("user");
       console.log(loggedInUser)
       if (loggedInUser) {
@@ -22,9 +25,9 @@ export const AuthProvider = ({ children }) => {
         const foundToken = foundUser.token
         console.log("ESSE É O FOUND TOKEN",foundToken)
         const data = await getUser(foundToken);
-        console.log(data)
+        console.log("USAREI ISSO AQUI",data.nome)
         setLog(false);
-        setUser({nome: data.nome, sobrenome: data.sobrenome, id: data.id, token: foundToken, cpf: data.cpf});
+        setUser({nome: data.nome, sobrenome: data.sobrenome, email:data.email, id: data.id, token: foundToken, cpf: data.cpf});
       } else {
         setLog(true);
         setUser({});

@@ -1,19 +1,19 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect, useInsertionEffect } from "react";
 import "../styles/Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../contexts/auth";
 const Email = "admin@admin";
 const Senha = "admin";
-
-const Register = () => {
+import { Api } from "../utils/auth.mjs";
+const UpdateUser = () => {
   const context = useContext(AuthContext)
 
   const [error, setError] = useState(null);
   const [registered, setRegistered] = useState(null);
   const navigate = useNavigate();
 
-  
-  
+  const user = context.user
+  const api = Api()
   
   const inputStyle = {
     width: "300px",
@@ -24,31 +24,26 @@ const Register = () => {
   };
 
   const Form = () =>{
+    console.log(user.email)
     const [formData, setFormData] = useState({
-      nome: "",
-      sobrenome: "",
-      email: "",
-      cpf: "",
-      password: "",
-      confirmPassword: ""
+      nome: user.nome,
+      sobrenome: user.sobrenome,
+      email: user.email,
+      cpf: user.cpf,
+      password: "umbanda"
     });
     useEffect(()=>{
   
-      setTimeout(() => {
-        setRegistered(null);
-      }, 10000);
       
-    },[registered]);
+    },[]);
   
     const handleSubmit = async () => {
+  
+      console.log(user.id)
       try {
         
-        if(formData.confirmPassword===formData.password){
-          await context.addNewUser(formData.nome, formData.sobrenome, formData.email, formData.password, formData.cpf)
+          await api.updateUser(formData.nome, formData.sobrenome, user.token, user.id)
           setRegistered(true)
-        }else{
-          setRegistered(false)
-        }
       } catch (error) {
           setRegistered(false)
           console.log(error)
@@ -57,7 +52,7 @@ const Register = () => {
 
     return (
       <form >
-          <h2 className="text-center mb-4">Registre-se</h2>
+          <h2 className="text-center mb-4">Atualizar Dados</h2>
           <div className="mb-3">
             <input
               id="text"
@@ -84,11 +79,13 @@ const Register = () => {
               required
             />
           </div>
+
+          <fieldset disabled>
+
           <div className="mb-3">
             <input
               id="cpf"
               type="text"
-              placeholder="Digite seu CPF"
               style={inputStyle}
               value={formData.cpf}
               onChange={(e) =>
@@ -101,7 +98,6 @@ const Register = () => {
             <input
               id="email"
               type="email"
-              placeholder="Digite seu e-mail"
               style={inputStyle}
               value={formData.email}
               onChange={(e) =>
@@ -122,21 +118,9 @@ const Register = () => {
               }
               required
             />
-          </div>
-          <div className="mb-3">
-            <input
-              id="confirmpassword"
-              type="password"
-              placeholder="Repita sua senha"
-              style={inputStyle}
-              value={formData.confirmPassword}
-              onChange={(e) =>
-                setFormData({ ...formData, confirmPassword: e.target.value })
-              }
-              required
-            />
-          </div>
-        <div className="container"> 
+            </div>
+          </fieldset>
+      
 
           <div className="row justify-content-evenly">
             <div ><button
@@ -156,7 +140,6 @@ const Register = () => {
               </Link></div>
                                              
           </div>
-        </div>
         </form>
     )
   
@@ -183,4 +166,4 @@ const Register = () => {
 };
 
 
-export default Register;
+export default UpdateUser;

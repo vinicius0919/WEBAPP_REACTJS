@@ -13,15 +13,25 @@ const Register = () => {
   const navigate = useNavigate();
 
   
-  
+  const formStyle = {
+    marginTop:"90px",
+    //padding: "1rem",
+    //boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+    borderRadius: "10px",
+    //background: "#413b6b",
+    boxShadow: "0px 0px 3px 0px #000000,inset 0px 0px 50px -23px #5c65c0"
+  };
   
   const inputStyle = {
-    width: "300px",
+    width: "100%",
+    maxWidth: "450px",
+    minWidth:"205px",
     marginBottom: "10px",
     padding: "10px",
     border: "1px solid #ccc",
     borderRadius: "5px"
   };
+
 
   const Form = () =>{
     const [formData, setFormData] = useState({
@@ -32,6 +42,18 @@ const Register = () => {
       password: "",
       confirmPassword: ""
     });
+
+    let equalsPass = (formData.confirmPassword === formData.password)
+    let lenPass = (formData.confirmPassword.length ===formData.password.length)&& formData.password.length > 8
+  console.log(lenPass)
+    const passwordStyle={
+      width: "100%",
+      marginBottom: "10px",
+      padding: "10px",
+      border: "1px solid #ccc",
+      borderRadius: "5px",
+      boxShadow: (equalsPass&&lenPass)? "0px 0px 5px green": "0px 0px 5px red"
+    }
     useEffect(()=>{
   
       setTimeout(() => {
@@ -56,9 +78,16 @@ const Register = () => {
     };
 
     return (
-      <form >
-          <h2 className="text-center mb-4">Registre-se</h2>
-          <div className="mb-3">
+      <form style={formStyle}>
+
+          <div className="container text-center">
+            <div className="row g-3 justify-content-center" id="row1">
+          <h2 className="text-center mb-4" style={{marginTop:"30px", marginBottom:"20px"}}>Registre-se</h2>
+              <div className="col-10">
+        <label className="form-label">Comece inserindo seu nome e sobrenome abaixo:</label>
+
+              </div>
+          <div className="col-auto">
             <input
               id="text"
               type="text"
@@ -71,7 +100,7 @@ const Register = () => {
               required
             />
           </div>
-          <div className="mb-3">
+          <div className="col-auto col-sm-7">
             <input
               id="sobrenome"
               type="text"
@@ -84,20 +113,34 @@ const Register = () => {
               required
             />
           </div>
-          <div className="mb-3">
-            <input
-              id="cpf"
-              type="text"
-              placeholder="Digite seu CPF"
-              style={inputStyle}
-              value={formData.cpf}
-              onChange={(e) =>
-                setFormData({ ...formData, cpf: e.target.value })
-              }
-              required
-            />
-          </div>
-          <div className="mb-3">
+            </div>
+            </div>
+
+            <div className="conteiner text-center" style={{marginTop:"20px"}}>
+  <div className="row g-3 justify-content-center">
+  <div className="col-8">
+    <label className="form-label">Digite apenas os números do seu CPF:</label>
+  </div>
+    <div className="col-auto col-sm-7">
+      <input
+        id="cpf"
+        type="text"
+        placeholder="Digite seu CPF"
+        style={inputStyle}
+        value={formData.cpf}
+        onChange={(e) =>
+          setFormData({ ...formData, cpf: e.target.value })
+        }
+        required
+      />
+    </div>
+  </div>
+</div>
+
+              <div className="conteiner text-center" style={{marginTop:"20px"}}>
+                <div className="row g-3 justify-content-center">
+                <label className="form-label">Digite um e-mail válido:</label>
+          <div className="col-auto col-sm-7">
             <input
               id="email"
               type="email"
@@ -110,12 +153,18 @@ const Register = () => {
               required
             />
           </div>
-          <div className="mb-3">
+          </div>
+          </div>
+
+          <div className="conteiner text-center" style={{marginTop:"20px"}}>
+                <div className="row g-3 justify-content-center">
+          <label className="form-label">Agora crie uma senha forte:</label>
+          <div className="col-auto">
             <input
               id="password"
               type="password"
               placeholder="Digite sua senha"
-              style={inputStyle}
+              style={passwordStyle}
               value={formData.password}
               onChange={(e) =>
                 setFormData({ ...formData, password: e.target.value })
@@ -123,12 +172,12 @@ const Register = () => {
               required
             />
           </div>
-          <div className="mb-3">
+          <div className="col-auto">
             <input
               id="confirmpassword"
               type="password"
               placeholder="Repita sua senha"
-              style={inputStyle}
+              style={passwordStyle}
               value={formData.confirmPassword}
               onChange={(e) =>
                 setFormData({ ...formData, confirmPassword: e.target.value })
@@ -136,17 +185,26 @@ const Register = () => {
               required
             />
           </div>
-        <div className="container"> 
+          <div className="col-8">
+          <span id="passwordHelpInline" className="form-text">
+      Digite uma senha de 8 a 20 caracteres. Use letras e números. Anote para não esquecer.
+    </span>
+  </div>
+          
+                </div>
+              </div>
+
+        <div className="container text-center"> 
 
           <div className="row justify-content-evenly">
-            <div ><button
+            <div style={{marginTop:"20px"}} ><button
                 onClick={handleSubmit}
                 type="button" // Use type "button" to prevent form submission
                 className="btn btn-primary"
               >
                 Registrar
               </button></div>
-            <div style={{marginTop:"20px"}} ><Link to={"/"}>
+            <div style={{marginTop:"20px", marginBottom:"30px"}} ><Link to={"/"}>
                 <button
                   className="btn btn-success"
                   type="button" 
@@ -162,8 +220,20 @@ const Register = () => {
   
   }
 
+
+  const formContainerStyle = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    minHeight: "100vh",
+    marginBottom: "100px"
+  };
+
   return (
-    <div className="conteiner text-center">
+    <div style={formContainerStyle}>
+
+<div className="col-sm-6 col-10 col-auto">
+<Form/>
       {(registered==false)&&<div className="alert alert-danger" role="alert">
   Usuário não cadatrados: dados inválidos!
 </div>}
@@ -171,13 +241,11 @@ const Register = () => {
             <div style={{position: "relative"}} className="alert alert-success" role="alert">
             Usuário cadastrado com sucesso!
           </div>}
+</div>
 
-          <div className="row justify-content-center">
-            <div className="col">
+  
 
-              <Form />
-            </div>
-          </div>
+
     </div>
   );
 };

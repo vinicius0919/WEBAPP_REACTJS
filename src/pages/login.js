@@ -51,7 +51,7 @@ const LoginPage = () => {
     <div className="conteiner text-center fluid">
       <div className="row justify-content-center">
         <div className="col-auto align-self-center" style={formStyle}>
-          <h2>Login</h2>
+          <h2 style={{marginBottom:"50px"}}>Login</h2>
           <div className="mb-3">
             <input
               id="email"

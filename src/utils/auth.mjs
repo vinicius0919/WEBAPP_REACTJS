@@ -1,6 +1,7 @@
 import axios from "axios"
 
 const api = (token) => axios.create({
+  baseURL:"http://10.0.0.208:3000/",
   headers: {
     'Authorization': `Bearer ${token}`,
     'Accept': "application/json",
@@ -16,8 +17,8 @@ const api = (token) => axios.create({
 export const Api = () =>({
 
     getUserProfile: async (token) =>{
-      const minhaApi = api(token, "proprietario/perfil");
-      await minhaApi.get()
+      const minhaApi = api(token);
+      await minhaApi.get("proprietario/perfil")
       .then(response => {
         return response.data;
       })

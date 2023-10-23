@@ -3,7 +3,8 @@ import "../styles/Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import autenticar from "../utils/auth.mjs";
 
-const LoginPage = () => {
+
+const Recuperar = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [error, setError] = useState(null);
   const [logged, setLogged] = useState(false);
@@ -21,16 +22,15 @@ const LoginPage = () => {
   };
 
   const formStyle = {
-    width: "300px",
-    padding: "20px",
-    //boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+    width:"400px",
+    maxWidth:"400px",
     borderRadius: "10px",
     //background: "#413b6b",
     boxShadow: "0px 0px 5px -3px #000000,inset 0px 0px 30px -23px #5c65c0"
   };
 
   const inputStyle = {
-    width: "100%",
+    width:"100%",
     marginBottom: "10px",
     padding: "10px",
     border: "1px solid #ccc",
@@ -38,17 +38,20 @@ const LoginPage = () => {
   };
 
   return (
-    <div style={containerStyle}>
-      <form style={formStyle}>
-        <h2 className="text-center mb-4">Recupere sua conta</h2>
+    <div className="container text-center">
+      <div className="row justify-content-center">
+      <div className="col-10 align-self-center" style={{marginTop:"90px",maxWidth:"400px", boxShadow: "0px 0px 5px -3px #000000,inset 0px 0px 30px -23px #5c65c0"}}>
+      <form >
         <div className="mb-3">
+        <h2 style={{marginTop:"30px"}}>Recupere sua conta</h2>
           <h3
             style={{
               fontSize: "16px",
               color: "green",
               textShadow: "0px 0px 1px black",
               textAlign: "center",
-              padding: "10px"
+              padding: "10px",
+              marginBottom:"20px"
             }}
           >
             Digite seu email, você receberá um código válido por 30 minutos para
@@ -66,31 +69,35 @@ const LoginPage = () => {
             required
           />
         </div>
-        <div className="row justify-content-center">
-          <div className="col-4">
+        <div className="mb-3" >
+
             <button
               onClick={handleSubmit}
               type="button" // Use type "button" to prevent form submission
               className="btn btn-primary"
-            >
+              >
               Enviar
             </button>
-          </div>
-          <div className="col-4 align-self-start">
+        </div>
+          
+         <div>
             <Link to={"/"}>
               <button
                 className="btn btn-success"
                 type="button" // Use type "button" to prevent form submission
+                style={{marginBottom:"30px"}}
               >
                 Voltar
               </button>
             </Link>
-          </div>
           {error && <div style={{ color: "red" }}>{error}</div>}
         </div>
       </form>
+      </div>
+      
+      </div>
     </div>
   );
 };
 
-export default LoginPage;
+export default Recuperar;

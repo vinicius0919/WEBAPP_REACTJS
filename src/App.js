@@ -8,7 +8,6 @@ function App() {
   return (
     <AuthProvider value={{ signed: true }}>
       <Rotas />
-      <link rel="icon" type="image/x-icon" href="./assets/favicon.ico"/>
 
     </AuthProvider>
   );

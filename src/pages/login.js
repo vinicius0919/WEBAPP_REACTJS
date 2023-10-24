@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import "../styles/Login.css";
 import { Link, useNavigate } from "react-router-dom";
-import autenticar from "../utils/auth.mjs";
 import googleImage from "../assets/google.png";
 import facebookImage from "../assets/facebook.png";
 import appleImage from "../assets/apple.png";

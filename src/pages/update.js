@@ -1,16 +1,15 @@
-import React, { useState, useContext, useEffect, useInsertionEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "../styles/Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../contexts/auth";
+import { Api } from "../utils/auth.mjs";
 const Email = "admin@admin";
 const Senha = "admin";
-import { Api } from "../utils/auth.mjs";
+
+
 const UpdateUser = () => {
   const context = useContext(AuthContext)
-
-  const [error, setError] = useState(null);
   const [registered, setRegistered] = useState(null);
-  const navigate = useNavigate();
 
   const user = context.user
   const api = Api()
@@ -24,12 +23,12 @@ const UpdateUser = () => {
   };
 
   const Form = () =>{
-    console.log(user.email)
+    //console.log(user.email)
     const [formData, setFormData] = useState({
-      nome: user.nome,
-      sobrenome: user.sobrenome,
-      email: user.email,
-      cpf: user.cpf,
+      nome: context.user.nome,
+      sobrenome: context.user.sobrenome,
+      email: context.user.email,
+      cpf: context.user.cpf,
       password: "umbanda"
     });
     useEffect(()=>{
@@ -39,7 +38,6 @@ const UpdateUser = () => {
   
     const handleSubmit = async () => {
   
-      console.log(user.id)
       try {
         
           await api.updateUser(formData.nome, formData.sobrenome, user.token, user.id)
@@ -147,7 +145,7 @@ const UpdateUser = () => {
 
   return (
     <div className="conteiner text-center">
-      {(registered==false)&&<div className="alert alert-danger" role="alert">
+      {(registered===false)&&<div className="alert alert-danger" role="alert">
   Usuário não cadatrados: dados inválidos!
 </div>}
           {registered&&

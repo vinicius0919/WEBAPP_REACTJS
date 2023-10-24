@@ -1,120 +1,85 @@
-import axios from "axios"
+import axios from "axios";
+
+const commonHeaders = {
+  'Accept': 'application/json',
+  'Content-Type': 'application/json',
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+  'Acess-Control-Allow_Header': 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+};
 
 const api = (token) => axios.create({
-  baseURL:"http://10.0.0.208:3000/",
+  baseURL: "http://10.0.0.208:3000/",
   headers: {
-    'Authorization': `Bearer ${token}`,
-    'Accept': "application/json",
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE",
-    "Acess-Control-Allow_Header":"Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  },
+    ...commonHeaders,
+    'Authorization': `Bearer ${token}`
+  }
 });
 
-
-
-export const Api = () =>({
-
-    getUserProfile: async (token) =>{
+export const Api = () => ({
+  getUserProfile: async (token) => {
+    try {
       const minhaApi = api(token);
-      await minhaApi.get("proprietario/perfil")
-      .then(response => {
-        return response.data;
-      })
-      .catch(error => {
-        console.error(error);
-      });
-    },
-    authUser: async(email, password, token) =>{
-      const minhaApi = api(token, "auth/login");
-      await minhaApi.post({email: email, password:password})
-      .then(response => {
-        return response.data ;
-      })
-      .catch(error => {
-        console.error(error);
-      });
-    },
-     updateUser: async(nome, sobrenome, token, id) =>{
+      const response = await minhaApi.get("proprietario/perfil",  { headers: { 'Authorization': `Bearer ${token}`, ...commonHeaders } });
+      return response.data;
+    } catch (error) {
+      console.error(error);
+      throw error; // Lança o erro novamente para ser tratado mais acima
+    }
+  },
+  authUser: async (email, password) => {
+    try {
+      const minhaApi = api();
+      const response = await minhaApi.post("auth/login", { email, password }, {commonHeaders});
+      console.log(response.data)
+      return response.data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  },
+  updateUser: async (nome, sobrenome, token, id) => {
+    try {
       const minhaApi = api(token);
-      await minhaApi.patch("http://10.0.0.208:3000/proprietario/213fdc64-ea09-44af-ae12-bf07687437f1",{nome:nome, sobrenome:sobrenome})
-      .then(response =>{
-        return response.data;
-      })
-      .catch(error =>{
-        console.log(error)
-      });
-     }
-  })
+      const response = await minhaApi.patch(`proprietario/${id}`, { nome, sobrenome, colaboradorId: id });
+      return response.data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
+});
 
-
-
-
-const autenticar = async (email, password) => {
-  const url = 'http://10.0.0.208:3000/auth/login'
+export const autenticar = async (email, password) => {
+  const url = 'http://10.0.0.208:3000/auth/login';
   try {
-    const response = await axios({
-      method: 'post',
-      headers: {
-        'Access-Control-Allow-Origin': "*"
-      },
-      url: url,
-      data: {
-        email: email,
-        password: password
-      }
-    });
+    const response = await axios.post(url, { email, password }, { headers: commonHeaders });
     return response.data;
-
   } catch (error) {
-    console.log(error)
+    console.log(error);
+    throw error;
   }
 };
 
-export async function addUser(nome, sobrenome, email, password, cpf){
-  const url = 'http://10.0.0.208:3000/proprietario'
+export async function addUser(nome, sobrenome, email, password, cpf) {
+  const url = 'http://10.0.0.208:3000/proprietario';
   try {
-    const response = await axios({
-      method: 'post',
-      headers: {
-        'Access-Control-Allow-Origin': "*"
-      },
-      url: url,
-      data: {
-        nome: nome,
-        sobrenome: sobrenome,
-        email: email,
-        password: password,
-        cpf: cpf
-      }
-    });
-
+    await axios.post(url, { nome, sobrenome, email, password, cpf }, { headers: commonHeaders });
     return true;
-
   } catch (error) {
-    return false
+    console.error(error);
+    return false;
   }
 }
 
-
-export async function getUser(token){
-  console.log("ENVIANDO O TOKEN:",token)
-  const url = 'http://10.0.0.208:3000/proprietario/perfil'
+export async function getUser(token) {
+  console.log("ENVIANDO O TOKEN:", token);
+  const url = 'http://10.0.0.208:3000/proprietario/perfil';
   try {
-    const response = await axios({
-      method: 'get',
-      headers: {
-        'Authorization': `Bearer ${token}`,
-        'Access-Control-Allow-Origin': "*"
-      },
-      url: url
-    });
+    const response = await axios.get(url, { headers: { 'Authorization': `Bearer ${token}`, ...commonHeaders } });
     return response.data;
-
   } catch (error) {
-    console.log(error)
+    console.error(error);
+    throw error;
   }
 }
-
-export default autenticar;

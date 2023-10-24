@@ -66,7 +66,7 @@ const OtherRoutes = () => {
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/cota" element={<Cota />} />
           <Route path="/logout" element={<Logout />} />
-          <Route path="/update" element={<UpdateUser />} />
+          <Route path="/perfil" element={<UpdateUser />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

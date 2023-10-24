@@ -1,17 +1,11 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import "../styles/Login.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import AuthContext from "../contexts/auth";
-const Email = "admin@admin";
-const Senha = "admin";
 
 const Register = () => {
   const context = useContext(AuthContext)
-
-  const [error, setError] = useState(null);
   const [registered, setRegistered] = useState(null);
-  const navigate = useNavigate();
-
   
   const formStyle = {
     marginTop:"90px",
@@ -54,13 +48,13 @@ const Register = () => {
       borderRadius: "5px",
       boxShadow: (equalsPass&&lenPass)? "0px 0px 5px green": "0px 0px 5px red"
     }
-    useEffect(()=>{
-  
+    
+    if(registered!=null){
       setTimeout(() => {
         setRegistered(null);
       }, 10000);
-      
-    },[registered]);
+    }
+
   
     const handleSubmit = async () => {
       try {
@@ -234,7 +228,7 @@ const Register = () => {
 
 <div className="col-sm-6 col-10 col-auto">
 <Form/>
-      {(registered==false)&&<div className="alert alert-danger" role="alert">
+      {(registered===false)&&<div className="alert alert-danger" role="alert">
   Usuário não cadatrados: dados inválidos!
 </div>}
           {registered&&

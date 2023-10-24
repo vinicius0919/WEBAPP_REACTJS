@@ -5,6 +5,10 @@
       "href": "/"
     },
     {
+      "name": "MEU PERFIL",
+      "href": "/perfil"
+    },
+    {
       "name": "CADASTRAR COTAÇÃO",
       "href": "/cadastro"
     },
@@ -19,10 +23,6 @@
     {
       "name": "LOGOUT",
       "href": "/logout"
-    },
-    {
-      "name": "...",
-      "href": "/"
     }
   ]
 }

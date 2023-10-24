@@ -23,15 +23,27 @@ const Navbar = (props) => {
         type="button"
         style={{ position: "absolute" }}
         data-bs-toggle="offcanvas"
-        data-bs-target="#staticBackdrop"
-        aria-controls="staticBackdrop"
+        data-bs-target="#offcanvasWithBothOptions"
+        aria-controls="offcanvasWithBothOptions"
       >
         <img src={menubtn} alt="menu-btn" width="15px" height="15px" />
       </button>
 
       <h1 style={tittleStl}>SISTEMA</h1>
 
-      <div
+<div className="offcanvas offcanvas-start" data-bs-scroll="true" tabIndex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div className="offcanvas-header">
+    <h5 className="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
+    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div className="offcanvas-body">
+  {optionsData.options.map((option, index) => (
+              <Sidebar options={option} key={index} index={index} />
+            ))}
+  </div>
+</div>
+
+      {false&&(<div
         className="offcanvas offcanvas-start"
         data-bs-backdrop="static"
         tabIndex="-1"
@@ -51,13 +63,11 @@ const Navbar = (props) => {
         </div>
 
         <div className="offcanvas-body">
-          <div className="conteiner">
             {optionsData.options.map((option, index) => (
               <Sidebar options={option} key={index} index={index} />
             ))}
-          </div>
         </div>
-      </div>
+      </div>)}
     </div>
   );
 };

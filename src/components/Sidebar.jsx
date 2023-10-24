@@ -29,20 +29,15 @@ const Options = ({ props }) => {
   };
 
   return (
-    <div className="col">
+    <div data-bs-dismiss="offcanvas" aria-label="Close">
       <Link
+        to={props.href} // Use o atributo "to" para definir a rota
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        to={props.href} // Use o atributo "to" para definir a rota
         style={stl}
       >
         {props.name}
       </Link>
-      {false && (
-        <div className="collapse" id={props.index}>
-          <div className="card card-body">Opção 1 Oção 2</div>
-        </div>
-      )}
     </div>
   );
 };

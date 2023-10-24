@@ -1,32 +1,15 @@
 import React, { useState } from "react";
 import "../styles/Login.css";
-import { Link, useNavigate } from "react-router-dom";
-import autenticar from "../utils/auth.mjs";
+import { Link } from "react-router-dom";
 
 
 const Recuperar = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [error, setError] = useState(null);
-  const [logged, setLogged] = useState(false);
-  const navigate = useNavigate();
+
 
   const handleSubmit = async () => {
     setError("Certifique-se de digitar um e-mail válido");
-  };
-
-  const containerStyle = {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100vh"
-  };
-
-  const formStyle = {
-    width:"400px",
-    maxWidth:"400px",
-    borderRadius: "10px",
-    //background: "#413b6b",
-    boxShadow: "0px 0px 5px -3px #000000,inset 0px 0px 30px -23px #5c65c0"
   };
 
   const inputStyle = {

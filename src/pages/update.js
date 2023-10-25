@@ -11,7 +11,10 @@ const UpdateUser = () => {
   const context = useContext(AuthContext)
   const [registered, setRegistered] = useState(null);
 
-  const user = context.user
+  const getUser = ()=>{
+    return context.user
+  }
+
   const api = Api()
   
   const inputStyle = {
@@ -32,15 +35,31 @@ const UpdateUser = () => {
       password: "umbanda"
     });
     useEffect(()=>{
-  
+      setFormData({
+        nome: context.user.nome,
+        sobrenome: context.user.sobrenome,
+        email: context.user.email,
+        cpf: context.user.cpf,
+        password: "umbanda"
+      })
       
-    },[]);
+    },[context.user]);
   
     const handleSubmit = async () => {
   
       try {
         
-          await api.updateUser(formData.nome, formData.sobrenome, user.token, user.id)
+          await api.updateUser(formData.nome, formData.sobrenome, context.user.token, context.user.id)
+          context.setUser({
+            nome: formData.nome,
+            sobrenome: formData.sobrenome,
+            email: formData.email,
+            cpf: formData.cpf,
+            password: formData.password, 
+            id: context.user.id,
+            token: context.user.token
+          })
+          console.log(context.user)
           setRegistered(true)
       } catch (error) {
           setRegistered(false)

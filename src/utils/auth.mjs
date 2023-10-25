@@ -41,7 +41,7 @@ export const Api = () => ({
   updateUser: async (nome, sobrenome, token, id) => {
     try {
       const minhaApi = api(token);
-      const response = await minhaApi.patch(`proprietario/${id}`, { nome, sobrenome, colaboradorId: id });
+      const response = await minhaApi.patch(`proprietario/${id}`, { nome, sobrenome});
       return response.data;
     } catch (error) {
       console.error(error);

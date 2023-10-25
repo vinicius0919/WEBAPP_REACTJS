@@ -8,11 +8,12 @@ export const AuthProvider = ({ children }) => {
   const [log, setLog] = useState(true);
   const [user, setUser] = useState();
   const api = Api()
+
   useEffect(() => {
-    
+    console.log("executando")
     fetchUserData(); // Chama a função assíncrona imediatamente
-  }, [log]);
-  
+  }, []);
+
   const fetchUserData = async () => {
     try {
         const loggedInUser = localStorage.getItem("user");
@@ -34,8 +35,6 @@ export const AuthProvider = ({ children }) => {
                 token: foundToken,
                 cpf: userData.cpf
             });
-
-            console.log("PROFILE DATA:",profileData);
         } else {
             setLog(true);
             setUser({});
@@ -45,7 +44,6 @@ export const AuthProvider = ({ children }) => {
         setUser({});
     }
 };
-
 
    async function logar(email, password) {
     try {
@@ -75,7 +73,7 @@ export const AuthProvider = ({ children }) => {
   }
 
   return (
-    <AuthContext.Provider value={{ log, logar, deslogar, user, addNewUser }}>
+    <AuthContext.Provider value={{ log, logar, deslogar, setUser, user, addNewUser }}>
       {children}
     </AuthContext.Provider>
   );

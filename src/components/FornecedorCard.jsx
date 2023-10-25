@@ -13,7 +13,7 @@ const FornecedorCard = ({ fornecedor, index }) => {
     position: moreInfo ? "absolute" : "relative",
     zIndex: moreInfo ? "2" : "0",
     left: moreInfo ? "28%" : "auto",
-    right: moreInfo ? "28%" : "auto"
+    right: moreInfo ? "28%" : "auto",
   };
 
   const styleDark = {
@@ -56,7 +56,7 @@ const FornecedorCard = ({ fornecedor, index }) => {
           )}
           {moreInfo && (
             <div>
-              <div className="modal-body">
+              <div className="modal-body" style={{height:"160px"}}>
                 <p className="card-text">
                   <strong>Telefone:</strong>
                   <br />

@@ -6,9 +6,8 @@ import { AuthProvider } from "./contexts/auth";
 function App() {
   //console.log(Rotas);
   return (
-    <AuthProvider value={{ signed: true }}>
+    <AuthProvider>
       <Rotas />
-
     </AuthProvider>
   );
 }

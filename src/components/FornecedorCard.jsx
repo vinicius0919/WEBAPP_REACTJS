@@ -56,7 +56,7 @@ const FornecedorCard = ({ fornecedor, index }) => {
           )}
           {moreInfo && (
             <div>
-              <div className="modal-body" style={{height:"160px"}}>
+              <div className="modal-body" style={{ height: "160px" }}>
                 <p className="card-text">
                   <strong>Telefone:</strong>
                   <br />

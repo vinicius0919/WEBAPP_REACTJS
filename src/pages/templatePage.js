@@ -11,7 +11,7 @@ export default function TemplatePage() {
   return (
     <div>
       <Navbar name={name} />
-      {}
+      { }
       <Outlet />
     </div>
   );

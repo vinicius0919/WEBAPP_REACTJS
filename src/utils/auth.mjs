@@ -20,31 +20,40 @@ export const Api = () => ({
   getUserProfile: async (token) => {
     try {
       const minhaApi = api(token);
-      const response = await minhaApi.get("proprietario/perfil",  { headers: { 'Authorization': `Bearer ${token}`, ...commonHeaders } });
+      const response = await minhaApi.get("proprietario/perfil", { headers: { 'Authorization': `Bearer ${token}`, ...commonHeaders } });
       return response.data;
     } catch (error) {
-      console.error(error);
+
       throw error; // Lança o erro novamente para ser tratado mais acima
     }
   },
   authUser: async (email, password) => {
     try {
       const minhaApi = api();
-      const response = await minhaApi.post("auth/login", { email, password }, {commonHeaders});
+      const response = await minhaApi.post("auth/login", { email, password }, { commonHeaders });
       console.log(response.data)
       return response.data;
     } catch (error) {
-      console.error(error);
+
       throw error;
     }
   },
   updateUser: async (nome, sobrenome, token, id) => {
     try {
       const minhaApi = api(token);
-      const response = await minhaApi.patch(`proprietario/${id}`, { nome, sobrenome});
+      const response = await minhaApi.patch(`proprietario/${id}`, { nome, sobrenome });
       return response.data;
     } catch (error) {
-      console.error(error);
+
+      throw error;
+    }
+  },
+  addNewEmpresa: async (token, nome_fantasia, razao_social, cnpj) =>{
+    try {
+      const minhaApi = api(token)
+      await minhaApi.post('empresa', {nome_fantasia, razao_social, cnpj})
+      return true
+    } catch (error) {
       throw error;
     }
   }
@@ -67,7 +76,6 @@ export async function addUser(nome, sobrenome, email, password, cpf) {
     await axios.post(url, { nome, sobrenome, email, password, cpf }, { headers: commonHeaders });
     return true;
   } catch (error) {
-    console.error(error);
     return false;
   }
 }
@@ -77,9 +85,9 @@ export async function getUser(token) {
   const url = 'http://10.0.0.208:3000/proprietario/perfil';
   try {
     const response = await axios.get(url, { headers: { 'Authorization': `Bearer ${token}`, ...commonHeaders } });
+    console.log(response.data)
     return response.data;
   } catch (error) {
-    console.error(error);
     throw error;
   }
 }

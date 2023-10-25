@@ -7,7 +7,11 @@ import TemplatePage from "../pages/templatePage";
 import FornecedorComplete from "../pages/fornecedorComplete";
 import FornecedoresCards from "../components/FornecedoresCards";
 import UpdateUser from "../pages/update";
+import Empresas from "../pages/empresas";
 import Teste from "../pages/teste";
+import NovaEmpresa from "../pages/novaEmpresa";
+
+
 
 import f from "../datas/fornecedor.json";
 
@@ -67,6 +71,8 @@ const OtherRoutes = () => {
           <Route path="/cota" element={<Cota />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/perfil" element={<UpdateUser />} />
+          <Route path="/empresas" element={<Empresas />} />
+          <Route path="/empresas/adicionar" element={<NovaEmpresa/>} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

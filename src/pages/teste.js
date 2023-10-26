@@ -5,8 +5,8 @@ const Teste = () => {
 
   const Cards = () => {
     return (
-      <div className="col">
-        <div className="card" style={{ width: "190px" }}>
+      <div className="col-6 col-md-3">
+        <div className="card">
           <img src={imgUser} className="card-img-top" alt="..." />
           <div className="card-body">
             <h5 className="card-title">EMPRESA LTDA</h5>
@@ -20,10 +20,8 @@ const Teste = () => {
   return (
     <div className="container text-center">
 
-      <div className="row justify-content-evenly">
+      <div className="row justify-content-center">
         <h1>PAINEL PRINCIPAL</h1>
-        <Cards />
-        <Cards />
         <Cards />
         <Cards />
         <Cards />

@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import optionsData from "../datas/options.json";
 import Sidebar from "./Sidebar";
 
 import menubtn from "../assets/menu-aberto.png";
 import "../styles/Navbar.css";
+import AuthContext from "../contexts/auth";
 
 const tittleStl = {
   fontFamily: "Impact, Charcoal, sans-serif",
@@ -16,6 +17,12 @@ const tittleStl = {
 };
 
 const Navbar = (props) => {
+
+  const context = useContext(AuthContext)
+  useEffect(()=>{
+    context.fetchUserData
+  },[])
+
   return (
     <div>
       <button
@@ -33,7 +40,7 @@ const Navbar = (props) => {
 
       <div className="offcanvas offcanvas-start" data-bs-scroll="true" tabIndex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
         <div className="offcanvas-header">
-          <h5 className="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
+          <h5 className="offcanvas-title" id="offcanvasWithBothOptionsLabel">Seja bem vindo, {context.user.nome}</h5>
           <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div className="offcanvas-body">

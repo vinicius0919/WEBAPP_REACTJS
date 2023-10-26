@@ -9,22 +9,6 @@
       "href": "/perfil"
     },
     {
-      "name": "MINHAS EMPRESAS",
-      "href": "/empresas"
-    },
-    {
-      "name": "CADASTRAR COTAÇÃO",
-      "href": "/cadastro"
-    },
-    {
-      "name": "COTAS",
-      "href": "/cota"
-    },
-    {
-      "name": "FORNECEDORES",
-      "href": "/fornecedores"
-    },
-    {
       "name": "LOGOUT",
       "href": "/logout"
     }

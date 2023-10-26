@@ -7,7 +7,7 @@ export default function CardEmpresa(props) {
     }
     const cnpj =(`${props.cnpj.slice(0,2)}.${props.cnpj.slice(2,5)}.${props.cnpj.slice(5,8)}/${props.cnpj.slice(8,12)}-${props.cnpj.slice(12)}`)
     return (
-        <div className="col-12 col-sm-6 align-self-center">
+        <div className="col-12 col-sm-6 align-self-center" style={{marginBottom:"20px"}}>
             <div className="card">
                 <div className="card-body">
                     <h5 className="card-title" style={styleText} >{props.nome_fantasia}</h5>

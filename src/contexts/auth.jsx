@@ -40,10 +40,12 @@ export const AuthProvider = ({ children }) => {
       } else {
         setLog(true);
         setUser({});
+        setEmpresas({});
       }
     } catch (error) {
       setLog(true);
       setUser({});
+      setEmpresas({});
     }
   };
 
@@ -77,7 +79,8 @@ export const AuthProvider = ({ children }) => {
     return register
   }
   function deslogar() {
-    setUser({})
+    setUser({});
+    setEmpresas({});
     localStorage.removeItem("user");
     localStorage.clear();
     setLog(true);

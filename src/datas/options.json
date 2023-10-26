@@ -9,6 +9,10 @@
       "href": "/perfil"
     },
     {
+      "name": "MINHAS EMPRESAS",
+      "href": "/empresas"
+    },
+    {
       "name": "CADASTRAR COTAÇÃO",
       "href": "/cadastro"
     },

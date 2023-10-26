@@ -1,15 +1,28 @@
 import React, { useState, useContext } from "react";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Api } from "../../utils/auth.mjs";
 import AuthContext from "../../contexts/auth";
 
 export default function FormNovaEmpresa() {
     const [formData, setForm] = useState({ nome_fantasia: "", razao_social: "", cnpj: "" })
+    const [registered, setRegistered] = useState();
     const api = Api()
     const context = useContext(AuthContext)
-    async function send(){
-        api.addNewEmpresa(context.user.token, formData.nome_fantasia, formData.razao_social, formData.cnpj)
-        await context.fetchUserData()
+
+    async function send() {
+        try {
+            const [response] = await Promise.all(
+                [api.addNewEmpresa(context.user.token, formData.nome_fantasia, formData.razao_social, formData.cnpj)]
+            )
+            if(response){
+                context.fetchUserData()
+                setRegistered(true)
+            }else{
+                setRegistered(false)
+            }
+        } catch (error) {
+            setRegistered(false)
+        }
     }
 
     return (
@@ -38,15 +51,21 @@ export default function FormNovaEmpresa() {
                             }} className="form-control" placeholder="00111222444455" id="cnpj" type="text" />
                         </div>
                     </form>
-
+                    {registered&&
+                        <div style={{ position: "relative" }} className="alert alert-success" role="alert">
+                            Empresa cadastrada com sucesso!
+                        </div>}
+                        {(registered===false)&&<div className="alert alert-danger" role="alert">
+                            Empresa não cadatrada: dados inválidos ou CNPJ já está sendo utilizado!
+                        </div>}
                 </div>
-                    <div className="row justify-content-evenly">
+                <div className="row justify-content-evenly">
 
-                    <button className="btn btn-success" onClick={send} type="submit" style={{width:"120px", marginBottom:"20px"}}>Cadastrar</button>
+                    <button className="btn btn-success" onClick={send} type="submit" style={{ width: "120px", marginBottom: "20px" }}>Cadastrar</button>
                     <Link to={'/empresas'}>
-                    <button className="btn btn-primary">Voltar</button>
+                        <button className="btn btn-primary">Voltar</button>
                     </Link>
-                    </div>
+                </div>
             </div>
         </div>
     )

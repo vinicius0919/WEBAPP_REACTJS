@@ -7,15 +7,21 @@ import { useEffect } from "react";
 
 export default function Empresas() {
     const context = useContext(AuthContext)
-    const [localEmpresas, setEmpresas] = useState(context.empresas)
+    const [exist, setExist] = useState(false)
+    
     useEffect(()=>{
-        setEmpresas(context.empresas)
-    },[context.empresas])
-
+        if(context.empresas){
+            setExist(true)
+        }else{
+            setExist(false)
+        }
+    },[])
+    const [localEmpresas, setEmpresas] = useState(context.empresas)
+  
     return (
         <div className="container text-center">
             <AddButton />
-            <ListEmpresas empresas={localEmpresas} />
+            {exist&&<ListEmpresas empresas={localEmpresas} />}
         </div>
     )
 }

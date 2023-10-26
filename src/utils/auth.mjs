@@ -54,7 +54,7 @@ export const Api = () => ({
       await minhaApi.post('empresa', {nome_fantasia, razao_social, cnpj})
       return true
     } catch (error) {
-      throw error;
+      return false;
     }
   }
 });

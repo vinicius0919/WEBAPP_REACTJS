@@ -31,7 +31,6 @@ export const Api = () => ({
     try {
       const minhaApi = api();
       const response = await minhaApi.post("auth/login", { email, password }, { commonHeaders });
-      console.log(response.data)
       return response.data;
     } catch (error) {
 
@@ -65,7 +64,6 @@ export const autenticar = async (email, password) => {
     const response = await axios.post(url, { email, password }, { headers: commonHeaders });
     return response.data;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };
@@ -81,11 +79,9 @@ export async function addUser(nome, sobrenome, email, password, cpf) {
 }
 
 export async function getUser(token) {
-  console.log("ENVIANDO O TOKEN:", token);
   const url = 'http://10.0.0.208:3000/proprietario/perfil';
   try {
-    const response = await axios.get(url, { headers: { 'Authorization': `Bearer ${token}`, ...commonHeaders } });
-    console.log(response.data)
+    const response = await axios.get(url, { headers: { 'Authorization': `Bearer ${token}`, ...commonHeaders } })
     return response.data;
   } catch (error) {
     throw error;

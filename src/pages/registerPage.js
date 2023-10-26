@@ -39,7 +39,6 @@ const Register = () => {
 
     let equalsPass = (formData.confirmPassword === formData.password)
     let lenPass = (formData.confirmPassword.length === formData.password.length) && formData.password.length > 8
-    console.log(lenPass)
     const passwordStyle = {
       width: "100%",
       marginBottom: "10px",
@@ -67,7 +66,6 @@ const Register = () => {
         }
       } catch (error) {
         setRegistered(false)
-        console.log(error)
       }
     };
 

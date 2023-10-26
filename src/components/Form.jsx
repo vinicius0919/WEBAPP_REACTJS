@@ -9,8 +9,6 @@ const Form = () => {
     let numeroNota = document.getElementById("numeroNota").value;
     let serie = document.getElementById("serie").value;
 
-    //console.log(db);
-
     db.push({
       nome: nome,
       dataEmissao: dataEmissao,

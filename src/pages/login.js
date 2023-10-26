@@ -17,14 +17,13 @@ const LoginPage = () => {
   const handleSubmit = async () => {
     try {
       await context.logar(formData.email, formData.password);
-      //console.log(context.log)
       if (!context.log) {
         navigate("/");
       } else {
         setError("USUÁRIO NÃO ENCONTRADO");
       }
     } catch (error) {
-      console.log(error)
+      return
     }
   };
 

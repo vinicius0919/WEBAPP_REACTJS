@@ -22,7 +22,6 @@ const UpdateUser = () => {
   };
 
   const Form = () => {
-    //console.log(user.email)
     const [formData, setFormData] = useState({
       nome: context.user.nome,
       sobrenome: context.user.sobrenome,
@@ -55,11 +54,11 @@ const UpdateUser = () => {
           id: context.user.id,
           token: context.user.token
         })
-        console.log(context.user)
         setRegistered(true)
+        return
       } catch (error) {
         setRegistered(false)
-        console.log(error)
+        return
       }
     };
 

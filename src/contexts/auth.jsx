@@ -11,7 +11,6 @@ export const AuthProvider = ({ children }) => {
   const api = Api()
 
   useEffect(() => {
-    console.log("executando")
     fetchUserData(); // Chama a função assíncrona imediatamente
   }, []);
 
@@ -26,7 +25,6 @@ export const AuthProvider = ({ children }) => {
           getUser(foundToken),
           api.getUserProfile(foundToken)
         ]);
-
         setLog(false);
         setEmpresas(userData.empresa)
         setUser({
@@ -50,7 +48,7 @@ export const AuthProvider = ({ children }) => {
   };
 
 
-  async function updateData(){
+  async function updateData() {
     try {
       fetchUserData()
     } catch (error) {

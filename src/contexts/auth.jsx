@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     fetchUserData(); // Chama a função assíncrona imediatamente
-  }, []);
+  }, [log]);
 
   const fetchUserData = async () => {
     try {

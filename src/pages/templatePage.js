@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Outlet } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/templatePage/Navbar";
 import AuthContext from "../contexts/auth";
 
 export default function TemplatePage() {

@@ -9,7 +9,7 @@ import {
 
 // IMPORTANDO COMPONENTES
 import Login from "../pages/login";
-import Recuperar from "../components/Recuperar";
+import Recuperar from "../components/recuperar/Recuperar";
 import RegisterPage from "../pages/registerPage";
 
 const NotFound = () => {

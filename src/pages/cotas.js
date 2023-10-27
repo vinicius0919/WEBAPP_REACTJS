@@ -1,5 +1,5 @@
 import React from "react";
-import Cotacao from "../components/Cota"; // Supondo que o componente esteja no arquivo Cotacao.js
+import Cotacao from "../components/cota/Cota"; // Supondo que o componente esteja no arquivo Cotacao.js
 import cotacoesData from "../datas/cotacao.json"; // Importe o JSON
 
 function Cotas() {

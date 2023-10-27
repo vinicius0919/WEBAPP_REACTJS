@@ -2,23 +2,23 @@
   "options": [
     {
       "name": "PRINCIPAL",
-      "href": "/"
+      "href": "/painel"
     },
     {
       "name": "MEU PERFIL",
-      "href": "/perfil"
+      "href": "perfil"
     },
     {
       "name": "MINHAS EMPRESAS",
-      "href": "/empresas"
+      "href": "empresas"
     },
     {
       "name": "CADASTRAR COTAÇÃO",
-      "href": "/cadastro"
+      "href": "cadastro"
     },
     {
       "name": "COTAS",
-      "href": "/cota"
+      "href": "cota"
     },
     {
       "name": "FORNECEDORES",
@@ -26,7 +26,7 @@
     },
     {
       "name": "LOGOUT",
-      "href": "/logout"
+      "href": "logout"
     }
   ]
 }

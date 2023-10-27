@@ -7,21 +7,28 @@ import appleImage from "../assets/apple.png";
 import AuthContext from "../contexts/auth";
 
 const LoginPage = () => {
+  const navigate = useNavigate()
 
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
+
 
   const context = useContext(AuthContext);
 
   const handleSubmit = async () => {
     try {
-      await context.logar(formData.email, formData.password);
-      if (!context.log) {
-        navigate("/");
-      } else {
-        setError("USUÁRIO NÃO ENCONTRADO");
+      if(formData.email!==""&&formData.password!==""){
+        console.log(1)
+        const response = await context.logar(formData.email, formData.password);
+        if(response){
+          navigate("/painel")
+        }else{
+          setError("DADOS INVÁLIDOS")
+        }
+      }else{
+        setError("DIGITE SEU EMAIL E SENHA")
       }
+      
     } catch (error) {
       return
     }

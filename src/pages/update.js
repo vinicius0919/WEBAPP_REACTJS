@@ -142,7 +142,7 @@ const UpdateUser = () => {
           >
             Registrar
           </button></div>
-          <div style={{ marginTop: "20px" }} ><Link to={"/"}>
+          <div style={{ marginTop: "20px" }} ><Link to={"/painel"}>
             <button
               className="btn btn-success"
               type="button"

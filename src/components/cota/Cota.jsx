@@ -1,5 +1,4 @@
-import React from "react";
-import "../styles/Cotacao.css"; // Importe um arquivo CSS para o estilo
+import React from "react";// Importe um arquivo CSS para o estilo
 
 const styleCard = {
   marginTop: "10px"

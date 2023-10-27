@@ -1,5 +1,4 @@
 import React, { createContext, useState, useEffect } from "react";
-
 import { addUser, getUser, Api } from "../utils/auth.mjs"
 
 const AuthContext = createContext();
@@ -55,15 +54,18 @@ export const AuthProvider = ({ children }) => {
       throw error
     }
   }
-
+  
   async function logar(email, password) {
     try {
       const newuser = await api.authUser(email, password)
       if (newuser) {
         const newtoken = newuser.access_token
-        await setUser({ token: newtoken });
+        await Promise.all([
+          setUser({ token: newtoken }),
+          setLog(false)
+        ])
         localStorage.setItem("user", JSON.stringify({ token: newtoken }));
-        setLog(false);
+        return true
       }
 
     } catch (error) {

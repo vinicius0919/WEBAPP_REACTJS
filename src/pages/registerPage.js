@@ -191,7 +191,7 @@ const Register = () => {
           <div className="row justify-content-evenly">
             <div style={{ marginTop: "20px" }} ><button
               onClick={handleSubmit}
-              type="button" // Use type "button" to prevent form submission
+              type="submit" // Use type "button" to prevent form submission
               className="btn btn-primary"
             >
               Registrar

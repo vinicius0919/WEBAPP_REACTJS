@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 
-import Cadastro from "../pages/cadastro";
 import Cota from "../pages/cotas";
 import TemplatePage from "../pages/templatePage";
 import FornecedorComplete from "../pages/fornecedorComplete";
-import FornecedoresCards from "../components/FornecedoresCards";
+import FornecedoresCards from "../components/fornecedores/FornecedoresCards";
 import UpdateUser from "../pages/update";
 import Empresas from "../pages/empresas";
 import Teste from "../pages/teste";
@@ -16,6 +15,7 @@ import NovaEmpresa from "../pages/novaEmpresa";
 import f from "../datas/fornecedor.json";
 
 import AuthContext from "../contexts/auth";
+import FormStep1 from "../components/empresas/formStep1";
 
 const NotFound = () => {
   const navigate = useNavigate();
@@ -57,7 +57,7 @@ const OtherRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<TemplatePage />}>
+        <Route path="/painel" element={<TemplatePage />}>
           <Route index element={<Teste />} />
           <Route
             path="fornecedores"
@@ -67,15 +67,22 @@ const OtherRoutes = () => {
             path="fornecedor"
             element={<FornecedorComplete fornecedores={f} />}
           />
-          <Route path="/cadastro" element={<Cadastro />} />
-          <Route path="/cota" element={<Cota />} />
-          <Route path="/logout" element={<Logout />} />
-          <Route path="/perfil" element={<UpdateUser />} />
-          <Route path="/empresas" element={<Empresas />} />
-          <Route path="/empresas/adicionar" element={<NovaEmpresa/>} />
+          <Route path="cota" element={<Cota />} />
+          <Route path="logout" element={<Logout />} />
+          <Route path="perfil" element={<UpdateUser />} />
+          <Route path="empresas" element={<Empresas />} />
+          <Route path="empresas/adicionar" element={<NovaEmpresa/>} />
           <Route path="*" element={<NotFound />} />
+
         </Route>
       </Routes>
+      
+          <Routes >
+            <Route path="painel/newcadastro" element={<NovaEmpresa />} >
+              <Route index element={<FormStep1 />} />
+              </Route>
+          </Routes>
+
     </BrowserRouter>
   );
 };

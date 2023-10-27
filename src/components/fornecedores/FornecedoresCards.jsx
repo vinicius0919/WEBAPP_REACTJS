@@ -1,6 +1,6 @@
 import React from "react";
 import FornecedorCard from "./FornecedorCard"; // Supondo que o componente esteja no arquivo Cotacao.js
-import fornecedoresData from "../datas/fornecedor.json"; // Importe o JSON
+import fornecedoresData from "../../datas/fornecedor.json"; // Importe o JSON
 
 export default function FornecedoresCards() {
   return (

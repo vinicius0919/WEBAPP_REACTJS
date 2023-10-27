@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom"; // Adicionado o import
-
-//import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/Fornecedor.css";
-import userImg from "../assets/user.png";
+import userImg from "../../assets/user.png";
 
 const FornecedorCard = ({ fornecedor, index }) => {
   const [moreInfo, setMoreInfo] = useState(false);

@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import optionsData from "../datas/options.json";
+import React from "react";
+import optionsData from "../../datas/options.json";
 import Sidebar from "./Sidebar";
 
-import menubtn from "../assets/menu-aberto.png";
-import "../styles/Navbar.css";
+import menubtn from "../../assets/menu-aberto.png";
 
 const tittleStl = {
   fontFamily: "Impact, Charcoal, sans-serif",

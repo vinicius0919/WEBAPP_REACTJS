@@ -5,7 +5,7 @@ import OtherRoutes from "./otherRoutes";
 import SignRoutes from "./signRoutes";
 const Rotas = () => {
   const context = useContext(AuthContext);
-  return context.log ? <SignRoutes /> : <OtherRoutes />;
+  return /*context.log*/ false? <SignRoutes /> : <OtherRoutes />;
 };
 
 export default Rotas;

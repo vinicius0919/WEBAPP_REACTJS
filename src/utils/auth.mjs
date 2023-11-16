@@ -47,15 +47,26 @@ export const Api = () => ({
       throw error;
     }
   },
-  addNewEmpresa: async (token, nome_fantasia, razao_social, cnpj) =>{
+  addNewEmpresa: async (token, nome_fantasia, razao_social, cnpj) => {
     try {
       const minhaApi = api(token)
-      await minhaApi.post('empresa', {nome_fantasia, razao_social, cnpj})
+      await minhaApi.post('empresa', { nome_fantasia, razao_social, cnpj })
       return true
     } catch (error) {
       return false;
     }
+  },
+  getEmpresa: async (token) =>{
+    try {
+      const minhaApi = api(token)
+      const response = await minhaApi.get('empresa')
+      return response.data.Empresas
+    } catch (error) {
+      console.log(error)
+      return false
+    }
   }
+
 });
 
 export const autenticar = async (email, password) => {

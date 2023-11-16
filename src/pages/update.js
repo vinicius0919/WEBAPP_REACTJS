@@ -1,11 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
-import "../styles/Login.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import AuthContext from "../contexts/auth";
 import { Api } from "../utils/auth.mjs";
-const Email = "admin@admin";
-const Senha = "admin";
-
 
 const UpdateUser = () => {
   const context = useContext(AuthContext)
@@ -38,7 +34,7 @@ const UpdateUser = () => {
         password: "umbanda"
       })
 
-    }, [context.user]);
+    }, []);
 
     const handleSubmit = async () => {
 

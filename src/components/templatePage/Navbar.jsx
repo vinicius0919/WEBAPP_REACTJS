@@ -20,15 +20,12 @@ const Navbar = (props) => {
       <button
         className="btn"
         type="button"
-        style={{ position: "absolute" }}
         data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasWithBothOptions"
         aria-controls="offcanvasWithBothOptions"
       >
-        <img src={menubtn} alt="menu-btn" width="15px" height="15px" />
+        <img id="menuIcon" src={menubtn} alt="menu-btn" />
       </button>
-
-      <h1 style={tittleStl}>SISTEMA</h1>
 
       <div className="offcanvas offcanvas-start" data-bs-scroll="true" tabIndex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
         <div className="offcanvas-header">

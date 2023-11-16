@@ -11,9 +11,9 @@ const Teste = () => {
           <div className="card-body">
             <h5 className="card-title">EMPRESA LTDA</h5>
             <p className="card-text">SABÃO</p>
-            <a href="#" className="btn btn-primary">Go</a>
+            <button className="btn btn-primary">Go</button>
           </div>
-        </div>
+        </div> 
       </div>
     )
   }

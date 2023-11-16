@@ -20,12 +20,8 @@ export const AuthProvider = ({ children }) => {
         const foundUser = JSON.parse(loggedInUser);
         const foundToken = foundUser.token;
 
-        const [userData, profileData] = await Promise.all([
-          getUser(foundToken),
-          api.getUserProfile(foundToken)
-        ]);
+        const userData = await api.getUserProfile(foundToken)
         setLog(false);
-        setEmpresas(userData.empresa)
         setUser({
           nome: userData.nome,
           sobrenome: userData.sobrenome,
@@ -37,7 +33,6 @@ export const AuthProvider = ({ children }) => {
       } else {
         setLog(true);
         setUser({});
-        setEmpresas({});
       }
     } catch (error) {
       setLog(true);
@@ -87,7 +82,7 @@ export const AuthProvider = ({ children }) => {
   }
 
   return (
-    <AuthContext.Provider value={{ log, logar, deslogar, setUser, user, addNewUser, empresas, fetchUserData }}>
+    <AuthContext.Provider value={{ log, logar, deslogar, setUser, user, addNewUser, empresas, setEmpresas, fetchUserData }}>
       {children}
     </AuthContext.Provider>
   );

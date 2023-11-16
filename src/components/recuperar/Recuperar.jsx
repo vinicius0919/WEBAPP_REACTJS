@@ -12,18 +12,26 @@ const Recuperar = () => {
     setError("Certifique-se de digitar um e-mail válido");
   };
 
+  const formStyle = {
+    marginTop: "90px",
+    width: "300px",
+    padding: "1rem",
+    backgroundColor:"#f7f7f7",
+    //boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+    //background: "#413b6b",
+    boxShadow: "0px 0px 5px -3px #000000,inset 0px 0px 30px -23px #5c65c0",
+    borderRadius:"20px"
+  };
+
   const inputStyle = {
     width: "100%",
-    marginBottom: "10px",
     padding: "10px",
     border: "1px solid #ccc",
-    borderRadius: "5px"
+    borderRadius: "20px"
   };
 
   return (
-    <div className="container text-center">
-      <div className="row justify-content-center">
-        <div className="col-10 align-self-center" style={{ marginTop: "90px", maxWidth: "400px", boxShadow: "0px 0px 5px -3px #000000,inset 0px 0px 30px -23px #5c65c0" }}>
+        <div className="col-auto" style={formStyle}>
           <form >
             <div className="mb-3">
               <h2 style={{ marginTop: "30px" }}>Recupere sua conta</h2>
@@ -77,9 +85,6 @@ const Recuperar = () => {
             </div>
           </form>
         </div>
-
-      </div>
-    </div>
   );
 };
 

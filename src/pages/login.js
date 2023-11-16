@@ -1,132 +1,32 @@
 import React, { useState, useContext } from "react";
 import "../styles/Login.css";
-import { Link, useNavigate } from "react-router-dom";
-import googleImage from "../assets/google.png";
-import facebookImage from "../assets/facebook.png";
-import appleImage from "../assets/apple.png";
-import AuthContext from "../contexts/auth";
-
-const LoginPage = () => {
-  const navigate = useNavigate()
-
-  const [formData, setFormData] = useState({ email: "", password: "" });
-  const [error, setError] = useState(null);
+import {Outlet } from "react-router-dom";
+import B2logo from "../assets/logo b2 (1).png"
 
 
-  const context = useContext(AuthContext);
+const LoginPage = ({element}) => {
 
-  const handleSubmit = async () => {
-    try {
-      if(formData.email!==""&&formData.password!==""){
-        console.log(1)
-        const response = await context.logar(formData.email, formData.password);
-        if(response){
-          navigate("/painel")
-        }else{
-          setError("DADOS INVÁLIDOS")
-        }
-      }else{
-        setError("DIGITE SEU EMAIL E SENHA")
-      }
-      
-    } catch (error) {
-      return
-    }
-  };
 
-  const formStyle = {
-    marginTop: "90px",
-    width: "300px",
-    padding: "1rem",
-    //boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-    borderRadius: "10px",
-    //background: "#413b6b",
-    boxShadow: "0px 0px 5px -3px #000000,inset 0px 0px 30px -23px #5c65c0"
-  };
-
-  const inputStyle = {
-    width: "95%",
-    marginBottom: "10px",
-    padding: "10px",
-    border: "1px solid #ccc",
-    borderRadius: "5px"
-  };
+  const TextOne = ({element}) => {
+    return (
+      <h4 >Negocie {element} com todos os fornecedores ao mesmo <br /> tempo, de forma inteligente</h4>
+    )
+  }
 
   return (
-    <div className="conteiner text-center fluid">
-      <div className="row justify-content-center">
-        <div className="col-auto align-self-center" style={formStyle}>
-          <h2 style={{ marginBottom: "50px" }}>Login</h2>
-          <div className="mb-3">
-            <input
-              id="email"
-              type="email"
-              placeholder="E-mail"
-              style={inputStyle}
-              value={formData.email}
-              onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
-              }
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <input
-              id="password"
-              type="password"
-              placeholder="Senha"
-              style={inputStyle}
-              value={formData.password}
-              onChange={(e) =>
-                setFormData({ ...formData, password: e.target.value })
-              }
-              required
-            />
-            {error && (
-              <div className="alert alert-danger" role="alert">
-                {error}
-              </div>
-            )}
-          </div>
+    <div className="conteiner">
+      <div className="circle"></div>
+      <div className="row justify-content-evenly">
+        <div className="col-auto" style={{ marginTop: "30px"}}>
+        <img src={B2logo} alt="logoB2" ></img>
+          <h2 id="welcomeText">Bem vindo(a) ao</h2>
+          <h2 id="sloganText">MAIOR PORTAL DE <br /> NEGOCIAÇÃO DO NORTE DO BRASIL</h2>
+          <TextOne element={<h4 id="gratis" >GRÁTIS</h4>} />
+          
 
-          <button
-            onClick={handleSubmit}
-            type="button" // Use type "button" to prevent form submission
-            className="btn btn-primary"
-          >
-            Login
-          </button>
-
-          <div
-            style={{ marginTop: "10px" }}
-            className="row justify-content-center"
-          >
-            <div className="col">
-              <Link to="register">
-                <button
-                  type="button" // Use type "button" to prevent form submission
-                  className="btn btn-success"
-                >
-                  Registre-se
-                </button>
-              </Link>
-            </div>
-          </div>
-          <div
-            className="row justify-content-center"
-            style={{ marginTop: "10px" }}
-          >
-            <div className="col" style={{ textAlign: "center" }}>
-              <Link to="recuperar">Esqueci minha senha</Link>
-            </div>
-          </div>
-          <div className="container text-center">
-            <LoginOption img={googleImage} text="Google" />
-            <LoginOption img={facebookImage} text="Facebook" />
-            <LoginOption img={appleImage} text="Apple" />
-          </div>
-          <script src="/login.js"></script>
         </div>
+        {}
+        <Outlet />
       </div>
     </div>
   );

@@ -8,9 +8,10 @@ import {
 } from "react-router-dom";
 
 // IMPORTANDO COMPONENTES
-import Login from "../pages/login";
+import LoginPage from "../pages/login";
 import Recuperar from "../components/recuperar/Recuperar";
 import RegisterPage from "../pages/registerPage";
+import LoginForm from "../components/login/form/formLogin";
 
 const NotFound = () => {
   const navigate = useNavigate();
@@ -39,10 +40,10 @@ const SignRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<TemplatePage />}>
-          <Route index element={<Login />} />
-          <Route path="recuperar" element={<Recuperar />} />
+        <Route path="/" element={<LoginPage />}>
+          <Route index element={<LoginForm />} />
           <Route path="register" element={<RegisterPage />} />
+          <Route path="recuperar" element={<Recuperar />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

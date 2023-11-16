@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import estilos from "../styles/styles.css"
 
 import Cota from "../pages/cotas";
 import TemplatePage from "../pages/templatePage";
@@ -8,7 +9,7 @@ import FornecedoresCards from "../components/fornecedores/FornecedoresCards";
 import UpdateUser from "../pages/update";
 import Empresas from "../pages/empresas";
 import Teste from "../pages/teste";
-import NovaEmpresa from "../pages/novaEmpresa";
+import NovaEmpresa2 from "../pages/empresas2";
 
 
 
@@ -71,17 +72,14 @@ const OtherRoutes = () => {
           <Route path="logout" element={<Logout />} />
           <Route path="perfil" element={<UpdateUser />} />
           <Route path="empresas" element={<Empresas />} />
-          <Route path="empresas/adicionar" element={<NovaEmpresa/>} />
+          <Route path="empresas/adicionar" element={<NovaEmpresa2 />} >
+            <Route index element={<FormStep1 text="form1" />} />
+            <Route path="step2" element={<FormStep1 text="form2" />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
-
         </Route>
+
       </Routes>
-      
-          <Routes >
-            <Route path="painel/newcadastro" element={<NovaEmpresa />} >
-              <Route index element={<FormStep1 />} />
-              </Route>
-          </Routes>
 
     </BrowserRouter>
   );

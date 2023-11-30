@@ -44,8 +44,8 @@ const SignRoutes = () => {
           <Route index element={<LoginForm />} />
           <Route path="register" element={<RegisterPage />} />
           <Route path="recuperar" element={<Recuperar />} />
-          <Route path="*" element={<NotFound />} />
         </Route>
+          <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

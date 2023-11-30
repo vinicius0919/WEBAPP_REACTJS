@@ -15,20 +15,15 @@ export default function AddButton(props) {
     }
 
     return (
-            <div id="btnBox" className="col-auto align-self-center">
-                <Link to="adicionar" id="addButton" 
-                    onMouseEnter={mouseUp}
-                    onMouseLeave={mouseLeave}
-                >
-                    <img style={styleImg} src={imgAddButton} alt={props.alt} />
-                </Link>
-                {hovered &&
-                    <h2 style={{
-                        fontFamily: "Arial, Helvetica, sans-serif",
-                        fontSize: "19px",
-                        color: " #2B81FF",
-                        fontWeight: "700"
-                    }}>Adicionar uma nova empresa</h2>}
-            </div>
+        <div id="btnBox" className="col-auto align-self-center">
+            <Link to="adicionar" id="addButton"
+                onMouseEnter={mouseUp}
+                onMouseLeave={mouseLeave}
+            >
+                <img style={styleImg} src={imgAddButton} alt={props.alt} />
+            </Link>
+            {true &&
+                <h5 style={{ color: "black" }}>Adicionar uma nova empresa</h5>}
+        </div>
     )
 }

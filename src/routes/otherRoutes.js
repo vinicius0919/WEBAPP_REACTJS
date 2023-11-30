@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
-import estilos from "../styles/styles.css"
+import "../styles/styles.css"
 
 import Cota from "../pages/cotas";
 import TemplatePage from "../pages/templatePage";
@@ -21,7 +21,7 @@ import FormStep1 from "../components/empresas/formStep1";
 const NotFound = () => {
   const navigate = useNavigate();
   function toStart() {
-    navigate("/");
+    navigate("/painel");
   }
 
   return (
@@ -40,17 +40,20 @@ const Logout = () => {
     navigate("/");
   }
   function cancelar() {
-    navigate("/");
+    navigate("/painel");
   }
   return (
     <div className="container text-center">
       <h1>Deseja mesmo sair?</h1>
-      <button className="btn btn-danger" onClick={handle}>
+      <div id="yes-not">
+
+      <button id="logout-yes" onClick={handle}>
         Sim
       </button>
-      <button className="btn btn-primary" onClick={cancelar}>
+      <button id="logout-no" onClick={cancelar}>
         Não
       </button>
+      </div>
     </div>
   );
 };
@@ -70,17 +73,22 @@ const OtherRoutes = () => {
           />
           <Route path="cota" element={<Cota />} />
           <Route path="logout" element={<Logout />} />
+{/** PÁGINA DE VISUALIZAÇÃO DOS DADOS CADASTRAIS DO USUÁRIO */}
           <Route path="perfil" element={<UpdateUser />} />
+
+{/** PÁGINA DE VISUALIZAÇÃO DAS EMPRESAS CADASTRADAS */}
           <Route path="empresas" element={<Empresas />} />
+
+{/** ROTA DE CADASTRO DE EMPRESAS DIVIDIDA EM TRÊS ETAPAS */}
           <Route path="empresas/adicionar" element={<NovaEmpresa2 />} >
             <Route index element={<FormStep1 text="form1" />} />
             <Route path="step2" element={<FormStep1 text="form2" />} />
           </Route>
-          <Route path="*" element={<NotFound />} />
         </Route>
 
+{/** PÁGINA DEFAULT CASO NÃO A ROTA PROCURADA NÃO EXISTA */}
+          <Route path="*" element={<NotFound />} />
       </Routes>
-
     </BrowserRouter>
   );
 };

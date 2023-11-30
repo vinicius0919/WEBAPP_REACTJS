@@ -9,7 +9,7 @@ const LoginPage = ({element}) => {
 
   const TextOne = ({element}) => {
     return (
-      <h4 >Negocie {element} com todos os fornecedores ao mesmo <br /> tempo, de forma inteligente</h4>
+      <h4 >Negocie <span  id="gratis">{element} </span>com todos os fornecedores ao mesmo <br /> tempo, de forma inteligente</h4>
     )
   }
 
@@ -21,7 +21,7 @@ const LoginPage = ({element}) => {
         <img src={B2logo} alt="logoB2" ></img>
           <h2 id="welcomeText">Bem vindo(a) ao</h2>
           <h2 id="sloganText">MAIOR PORTAL DE <br /> NEGOCIAÇÃO DO NORTE DO BRASIL</h2>
-          <TextOne element={<h4 id="gratis" >GRÁTIS</h4>} />
+          <TextOne element={"GRÁTIS"} />
           
 
         </div>

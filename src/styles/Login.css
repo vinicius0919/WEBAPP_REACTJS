@@ -6,7 +6,7 @@ h4 {
     line-break: auto;
 }
 
-h4#gratis {
+span#gratis {
     display: inline;
     color: #ff610c
 }
@@ -14,6 +14,7 @@ h4#gratis {
 h2#sloganText {
     text-align: left;
     font-style: italic;
+    font-size: 29px;
     color: #ff610c;
 }
 
@@ -47,7 +48,8 @@ div.row.justify-content-evenly {
 }
 
 div.container {
-    position: absolute;
+    position: relative;
+    overflow: hidden;
 }
 
 button.btn.btn-primary {

@@ -6,7 +6,7 @@ h4 {
     line-break: auto;
 }
 
-span#gratis {
+h4#gratis {
     display: inline;
     color: #ff610c
 }
@@ -14,7 +14,6 @@ span#gratis {
 h2#sloganText {
     text-align: left;
     font-style: italic;
-    font-size: 29px;
     color: #ff610c;
 }
 
@@ -48,21 +47,24 @@ div.row.justify-content-evenly {
 }
 
 div.container {
-    position: relative;
-    overflow: hidden;
+    position: absolute;
 }
 
 button.btn.btn-primary {
     background: #ff610c;
+    border-radius: 20px;
+    padding: 0%;
+    width: 250px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
     border: none;
 }
 
 input {
     width: 100%;
-    padding: 5px;
     border: 1px solid #ccc;
     border-radius: 20px;
-    margin-top: 5px;
+    margin-top: 0px;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */

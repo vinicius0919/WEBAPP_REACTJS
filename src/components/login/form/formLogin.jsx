@@ -45,9 +45,11 @@ const LoginForm = () => {
 
   const inputStyle = {
     width: "100%",
-    padding: "10px",
+    padding: "3px",
     border: "1px solid #ccc",
-    borderRadius: "20px"
+    borderRadius: "20px",
+    fontFamily: `Arial, Helvetica, sans-serif`,
+    fontStyle: "italic"
   };
 
   const TextOne = ({element}) => {
@@ -94,7 +96,7 @@ const LoginForm = () => {
             )}
           </div>
 
-          <div className="row">
+          <div className="row justify-content-center">
 
             <button
               onClick={handleSubmit}

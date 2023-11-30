@@ -34,7 +34,7 @@ const Recuperar = () => {
         <div className="col-auto" style={formStyle}>
           <form >
             <div className="mb-3">
-              <h2 style={{ marginTop: "30px" }}>Recupere sua conta</h2>
+              <h2 style={{ marginTop: "30px", textAlign: "center" }}>Recupere sua conta</h2>
               <h3
                 style={{
                   fontSize: "16px",
@@ -60,7 +60,7 @@ const Recuperar = () => {
                 required
               />
             </div>
-            <div className="mb-3" >
+            <div className="row justify-content-center" >
 
               <button
                 onClick={handleSubmit}
@@ -71,12 +71,12 @@ const Recuperar = () => {
               </button>
             </div>
 
-            <div>
+            <div style={{textAlign:"center", marginTop: "3px"}}>
               <Link to={"/"}>
                 <button
                   className="btn btn-success"
                   type="button" // Use type "button" to prevent form submission
-                  style={{ marginBottom: "30px" }}
+                  style={{ marginBottom: "3px", padding: "5px", borderRadius: "20px" }}
                 >
                   Voltar
                 </button>

@@ -34,7 +34,7 @@ const Recuperar = () => {
         <div className="col-auto" style={formStyle}>
           <form >
             <div className="mb-3">
-              <h2 style={{ marginTop: "30px", textAlign: "center" }}>Recupere sua conta</h2>
+              <h2 id="recupere-text-01">Recupere sua conta</h2>
               <h3
                 style={{
                   fontSize: "16px",
@@ -45,7 +45,7 @@ const Recuperar = () => {
                   marginBottom: "20px"
                 }}
               >
-                Digite seu email, você receberá um código válido por 30 minutos para
+                Digite seu email, você receberá um código válido por 3 minutos para
                 efetuar a recuperação da sua conta
               </h3>
               <input
@@ -60,23 +60,20 @@ const Recuperar = () => {
                 required
               />
             </div>
-            <div className="row justify-content-center" >
-
+            <div className="row justify-content-evenly" >
               <button
                 onClick={handleSubmit}
-                type="button" // Use type "button" to prevent form submission
-                className="btn btn-primary"
+                type="submit" // Use type "button" to prevent form submission
+                className="btn-recuperar"
+                style={{backgroundColor:"#ff610c"}}
               >
                 Enviar
               </button>
-            </div>
-
-            <div style={{textAlign:"center", marginTop: "3px"}}>
-              <Link to={"/"}>
+              <Link className="link-recuperar" to={"/"}>
                 <button
-                  className="btn btn-success"
+                style={{backgroundColor:"green"}}
+                  className="btn-recuperar"
                   type="button" // Use type "button" to prevent form submission
-                  style={{ marginBottom: "3px", padding: "5px", borderRadius: "20px" }}
                 >
                   Voltar
                 </button>

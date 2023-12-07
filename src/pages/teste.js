@@ -9,18 +9,17 @@ const Teste = () => {
 
         <div className="dashboard">
           <div className="bar-charts">
-            <h3>Cotações Realizadas - Agosto</h3>
-            <div className="chart" style={{ backgroundColor: "#ff610c", width: "60%" }}></div>
-            <h3>Cotações Participadas - Agosto</h3>
-            <div className="chart" style={{ backgroundColor: "#ff610c", width: "80%" }}></div>
-            <h3>Cotações Realizadas - Setembro</h3>
-            <div className="chart" style={{ backgroundColor: "#ff610c", width: "30%" }}></div>
-            <h3>Cotações Participadas - Setembro</h3>
-            <div className="chart" style={{ backgroundColor: "#ff610c", width: "70%" }}></div>
-            <h3>Cotações Realizadas - Outubro</h3>
-            <div className="chart" style={{ backgroundColor: "#ff610c", width: "50%" }}></div>
-            <h3>Cotações Participadas - Outubro</h3>
-            <div className="chart" style={{ backgroundColor: "#ff610c", width: "60%" }}></div>
+            <h3>Cotações Realizadas</h3>
+            <h3>Agosto</h3>
+            <div className="chart" style={{ backgroundColor: "#ff610c", width: "80%", textAlign:"center" }}>80</div>
+            <h3>Setembro</h3>
+            <div className="chart" style={{ backgroundColor: "#ff610c", width: "30%", textAlign:"center" }}>30</div>
+            <h3>Outubro</h3>
+            <div className="chart" style={{ backgroundColor: "#ff610c", width: "70%", textAlign:"center" }}>70</div>
+            <h3>Novembro</h3>
+            <div className="chart" style={{ backgroundColor: "#ff610c", width: "50%", textAlign:"center" }}>50</div>
+            <h3>Dezembro</h3>
+            <div className="chart" style={{ backgroundColor: "#ff610c", width: "60%", textAlign:"center" }}>60</div>
           </div>
 
         </div>

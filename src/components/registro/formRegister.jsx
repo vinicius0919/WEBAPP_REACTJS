@@ -47,7 +47,8 @@ const RegisterForm = () => {
         width: "100%",
         padding: "10px",
         border: "1px solid #ccc",
-        borderRadius: "20px"
+        borderRadius: "20px",
+        marginTop: "3px"
     };
 
     const TextOne = ({ element }) => {

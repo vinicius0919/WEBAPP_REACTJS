@@ -1,12 +1,12 @@
 import React, { useState, useContext } from "react";
 import "../styles/Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../contexts/auth";
 
 const Register = () => {
   const context = useContext(AuthContext)
   const [registered, setRegistered] = useState(null);
-
+  const navigate = useNavigate()
   const formStyle = {
     marginTop: "90px",
     width: "300px",
@@ -17,15 +17,6 @@ const Register = () => {
     boxShadow: "0px 0px 5px -3px #000000,inset 0px 0px 30px -23px #5c65c0",
     borderRadius: "20px"
   };
-
-  const inputStyle = {
-    width: "100%",
-    padding: "10px",
-    border: "1px solid #ccc",
-    borderRadius: "20px",
-    marginTop: "10px"
-  };
-
 
   const Form = () => {
     const [formData, setFormData] = useState({
@@ -56,6 +47,9 @@ const Register = () => {
         if (formData.confirmPassword === formData.password) {
           await context.addNewUser(formData.nome, formData.sobrenome, formData.email, formData.password, formData.cpf)
           setRegistered(true)
+          setTimeout(() => {
+            navigate("/")
+          }, 5000);
         } else {
           setRegistered(false)
         }
@@ -135,7 +129,7 @@ const Register = () => {
           required
         />
 
-        <div className="row" style={{ marginTop: "10px" }}>
+        <div className="row justify-content-center" style={{ marginTop: "10px" }}>
           <button
             onClick={handleSubmit}
             type="submit" // Use type "button" to prevent form submission
@@ -150,18 +144,18 @@ const Register = () => {
           </Link>
         </div>
 
+        {(registered===false) && <div className="alert alert-danger" role="alert">
+          Usuário não cadatrado: dados inválidos!
+        </div>}
+        {registered &&
+          <div style={{ position: "absolute" }} className="alert alert-success" role="alert">
+            Usuário cadastrado com sucesso!
+          </div>}
       </div>
     )
 
   }
 
-  // {(registered === false) && <div className="alert alert-danger" role="alert">
-  //   Usuário não cadatrados: dados inválidos!
-  // </div>}
-  // {registered &&
-  //   <div style={{ position: "relative" }} className="alert alert-success" role="alert">
-  //     Usuário cadastrado com sucesso!
-  //   </div>}
 
   return (
     <Form />

@@ -5,6 +5,13 @@ h4 {
     font-size: 21px;
     line-break: auto;
 }
+#recupere-text-01{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 19px;
+    text-align: center;
+}
 
 h4#gratis {
     display: inline;
@@ -15,6 +22,7 @@ h2#sloganText {
     text-align: left;
     font-style: italic;
     color: #ff610c;
+    font-size: 29.5px;
 }
 
 h2#welcomeText {
@@ -50,7 +58,7 @@ div.container {
     position: absolute;
 }
 
-button.btn.btn-primary {
+.btn.btn-primary {
     background: #ff610c;
     border-radius: 20px;
     padding: 0%;
@@ -59,12 +67,22 @@ button.btn.btn-primary {
     font-style: italic;
     border: none;
 }
+.link-recuperar{
+    width: fit-content;
+}
+.btn-recuperar{
+    color: white;
+    padding: auto;
+    width: 70px;
+    border-radius: 10px;
+}
 
 input {
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 20px;
     margin-top: 0px;
+    margin-top: 5px;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
